@@ -82,12 +82,13 @@
     %\frontmatterMonograph 
  
    % Optional dedication
-   \dedication{Dedicated to all hard-working \\doctoral students at Uppsala University}
+   %\dedication{Dedicated to all hard-working \\doctoral students at Uppsala University}
  
     % Environment used to create a list of papers
-    \begin{listofpapers}
-    	\item A Paper Discussed in this Thesis \label{apaperlabel}
-    \end{listofpapers}
+    %\begin{listofpapers}
+    %	\item A Paper Discussed in this Thesis \label{apaperlabel}
+    %\end{listofpapers}
+    
     
     
     \begingroup
@@ -103,12 +104,14 @@
 
 \mainmatter
     % This includes the "Instruction", "Problem and Solutions" and "Example" files. After reading it, remove it from Thesis.tex. 
-    \input{Example/Instruction.tex}
-    \input{Example/ProblemsAndSolutions}
-    \input{Example/Example.tex}
     
     % Include your chapters here.
-    %\input{Introduction.tex}
+    \input{Chapters/Introduction.tex}
+    \input{Chapters/Theory.tex}
+    \input{Chapters/coil-magnetometer.tex}
+    \input{Chapters/measurements.tex}
+    \input{Chapters/post_processing.tex}
+    \input{Chapters/discussion.tex}
 
 
 \backmatter
