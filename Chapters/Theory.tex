@@ -1,0 +1,59 @@
+\chapter{Background}
+
+\section{Electromagnetic Fields}
+The electromagnetic fields are a collection of closely linked fields.
+These fields govern the electric and magnetic interactions of charged
+particles and domains. These fields can be seen in table \ref{tab:fields}
+
+\begin{center}
+    \begin{tabular}{c c c}
+        \label{tab:fields}
+        Field    & SI unit         & Description              \\
+        \hline
+        $\vb{H}$ & $1\, Am^{-1} $  & Magnetic Field           \\
+        $\vb{E}$ & $1\, Vm^{-1} $  & Electric Field           \\
+        $\vb{B}$ & $1\, Vsm^{-2} $ & Magnetic Flux Density    \\
+        $\vb{D}$ & $1\, Asm^{-2} $ & Electric Flux Density    \\
+        $\vb{J}$ & $1\, Am^{-2} $  & Electric Current Density \\
+        $\rho$   & $1\, Asm^{-3} $ & Electric Charge Density
+    \end{tabular}
+\end{center}
+These fields are described by Maxwells Equations.
+In differential form for the stationary case, these are as follows:
+
+\begin{align}
+    \nabla \times \vb{H} & = \vb{J} + \frac{\partial}{\partial t}\vb{D}
+    \label{eq:maxwell1}                                                    \\
+    \nabla \times \vb{E} & = -\frac{\partial}{\partial t}\vb{B}
+    \label{eq:maxwell2}                                                    \\
+    \nabla \vb{B}        & = \vb{0}
+    \label{eq:maxwell3}                                                    \\
+    \nabla \vb{D}        & = \rho
+    \label{:eqmaxwell4}
+\end{align}
+Since we're dealing with measurement of magnetic fields in this thesis,
+equations \ref{eq:maxwell1} and \ref{eq:maxwell3} will naturally be of
+the most interest. In simple cases, the $\vb{H}$ and $\vb{B}$ field
+obey the easy relation 
+\begin{equation}
+    \vb{B} = \mu \vb{H}
+    \label{eq:BHmap}
+\end{equation}
+where $\mu$ is the \emph{magnetic permeability} in the domain of interest.
+Formally, simple cases are where the fields are located in a medium that is
+linear, homogenous across its domain, invariant depending on direction, and
+stationary. Since the magnetic measurements are made inside the empty aperture
+of the magnet, the domain is only made up of air. Thus, equation \ref{eq:BHmap}
+holds, and the magnetic permeability is the one of free space, that is
+$\mu = \mu_0 = 4\pi \times 10^{-7} Hm^{-1}$. \cite[Ch.4]{russenschuck2011field}
+
+
+\subsection{The magnetic field and induction}
+\subsection{Series decompositions of the magnetic field}
+\subsubsection{Cylindrical Coordinates}
+\subsubsection{Bessel Functions}
+\subsubsection{Bessel-Fourier-Fourier Series}
+
+\section{Signal Processing}
+\subsection{Filters}
+\subsection{Least Squares Fitting}

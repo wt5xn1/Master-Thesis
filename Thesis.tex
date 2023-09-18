@@ -15,8 +15,9 @@
 %                                         
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \documentclass{UUThesisTemplate}
+% Nomenclature
+
 
 % Package to determine wether XeTeX is used
 \usepackage{ifxetex}
@@ -49,7 +50,6 @@
 	\usepackage{graphicx}
 \fi
 
-
 % Tables
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -63,6 +63,18 @@
 % Including headings down to the subsection level in contents
 \contentsdepth{subsection}
 
+% Maths
+\usepackage{amsmath,physics}
+\renewcommand{\arraystretch}{1.5} % More spacious tables
+
+% Glossary
+\usepackage[toc,section=chapter]{glossaries}
+\newglossary{unit}{unit}{unt}{Units}
+\renewcommand{\glsclearpage}{}
+\loadglsentries{glossary.tex}
+\makeglossaries
+\glsaddall[types={unit}]
+
 
 % Uncomment to use a custom abstract dummy text
 %\abstractdummy{
@@ -71,55 +83,58 @@
 %	\end{abstract}
 %}
 
-
 \begin{document}
 \frontmatter
-    % Creates the front matter (title page(s), abstract, list of papers)
-    % for either a Comprehensive Summary or a Monograph.
-    % Authors of Comprehensive Summaries use this front matter 
-    \frontmatterCS 
-    % Monograph authors use this front matter 
-    %\frontmatterMonograph 
- 
-   % Optional dedication
-   %\dedication{Dedicated to all hard-working \\doctoral students at Uppsala University}
- 
-    % Environment used to create a list of papers
-    %\begin{listofpapers}
-    %	\item A Paper Discussed in this Thesis \label{apaperlabel}
-    %\end{listofpapers}
-    
-    
-    
-    \begingroup
-        % To adjust the indentation in your table of contents, uncomment and enter the widest numbers for each level
-        %  E.g.  \settocnumwidth{widest chapter number}{widest section number}{widest subsection number}...{...}
-       %  \settocnumwidth{5}{4}{5}{3}{3}{3}
-        \tableofcontents
-    \endgroup
-    
-    % Optional tables
-    %\listoftables
-    %\listoffigures
+% Creates the front matter (title page(s), abstract, list of papers)
+% for either a Comprehensive Summary or a Monograph.
+% Authors of Comprehensive Summaries use this front matter 
+\frontmatterCS
+% Monograph authors use this front matter 
+%\frontmatterMonograph 
+
+% Optional dedication
+%\dedication{Dedicated to all hard-working \\doctoral students at Uppsala University}
+
+% Environment used to create a list of papers
+%\begin{listofpapers}
+%	\item A Paper Discussed in this Thesis \label{apaperlabel}
+%\end{listofpapers}
+
+
+
+\begingroup
+% To adjust the indentation in your table of contents, uncomment and enter the widest numbers for each level
+%  E.g.  \settocnumwidth{widest chapter number}{widest section number}{widest subsection number}...{...}
+%  \settocnumwidth{5}{4}{5}{3}{3}{3}
+\tableofcontents
+\endgroup
+
+% Optional tables
+%\listoftables
+%\listoffigures
 
 \mainmatter
-    % This includes the "Instruction", "Problem and Solutions" and "Example" files. After reading it, remove it from Thesis.tex. 
-    
-    % Include your chapters here.
-    \input{Chapters/Introduction.tex}
-    \input{Chapters/Theory.tex}
-    \input{Chapters/coil-magnetometer.tex}
-    \input{Chapters/measurements.tex}
-    \input{Chapters/post_processing.tex}
-    \input{Chapters/discussion.tex}
+% This includes the "Instruction", "Problem and Solutions" and "Example" files. After reading it, remove it from Thesis.tex. 
+
+% Include your chapters here.
+
+\input{Chapters/Introduction.tex}
+\input{Chapters/Theory.tex}
+\input{Chapters/coil-magnetometer.tex}
+\input{Chapters/measurements.tex}
+\input{Chapters/post_processing.tex}
+\input{Chapters/discussion.tex}
+\printglossary[type=main]
+\printglossary[type=unit]
+\clearpage
 
 
 \backmatter
-    % References
-    % No restriction is set to the reference styles
-    % Save your references in References.bib
-    \nocite{*} % Remove this for your own citations
-    \bibliographystyle{plain}
-    \bibliography{References}
+% References
+% No restriction is set to the reference styles
+% Save your references in References.bib
+\nocite{*} % Remove this for your own citations
+\bibliographystyle{plain}
+\bibliography{References}
 
 \end{document}
