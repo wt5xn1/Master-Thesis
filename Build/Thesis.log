@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.7.27)  18 SEP 2023 18:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.7.27)  20 SEP 2023 17:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -373,7 +373,18 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box55
 ))
 Package: xparse 2023-02-02 L3 Experimental document command parser
-)) (C:\Users\vmattsso\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/base\glossaries.sty
+)) (C:\Users\vmattsso\AppData\Local\Programs\MiKTeX\tex/latex/esint\esint.sty
+Package: esint 
+\symlargesymbolsA=\mathgroup6
+) (C:\Users\vmattsso\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (C:\Users\vmattsso\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup7
+\symAMSb=\mathgroup8
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (defines.tex) (C:\Users\vmattsso\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/base\glossaries.sty
 Package: glossaries 2022/11/03 v4.52 (NLCT)
  (C:\Users\vmattsso\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
@@ -514,35 +525,35 @@ Package: glossary-tree 2022/11/03 v4.52 (NLCT)
 \glo@main@file=\write4
 \openout4 = `Thesis.glo'.
 
-Package glossaries Info: Writing glossary file Thesis.glo on input line 75.
+Package glossaries Info: Writing glossary file Thesis.glo on input line 78.
 \glo@unit@file=\write5
 \openout5 = `Thesis.unt'.
 
-Package glossaries Info: Writing glossary file Thesis.unt on input line 75.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 86.
+Package glossaries Info: Writing glossary file Thesis.unt on input line 78.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 89.
  (C:\Users\vmattsso\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.aux)
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
  (C:\Users\vmattsso\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count324
@@ -568,7 +579,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (C:\Users\vmattsso\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 86.
+Package hyperref Info: Link coloring ON on input line 89.
  (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.out) (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.out)
 \@outlinefile=\write6
 \openout6 = `Thesis.out'.
@@ -627,16 +638,15 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.14006> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.60007> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
-) (Chapters/Theory.tex [5
+LaTeX Font Info:    Trying to load font information for U+esint on input line 12.
+ (C:\Users\vmattsso\AppData\Local\Programs\MiKTeX\tex/latex/esint\uesint.fd
+File: uesint.fd 
+)) (Chapters/Theory.tex [5
 
 
-]
+] [6
 
-LaTeX Warning: Citation `russenschuck2011field' on page 6 undefined on input line 48.
-
-) (Chapters/coil-magnetometer.tex [6
-
-] [7]) (Chapters/measurements.tex [8
+]) (Chapters/coil-magnetometer.tex [7]) (Chapters/measurements.tex [8
 
 ]) (Chapters/post_processing.tex [9
 
@@ -646,27 +656,26 @@ LaTeX Warning: Citation `russenschuck2011field' on page 6 undefined on input lin
 
 ]) [12
 
-]
-No file Thesis.bbl.
-(c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.aux)
+] (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.bbl) [13
 
-LaTeX Warning: There were undefined references.
 
+
+] (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.aux)
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: BAA0F6679202548695F09D2976A952E7;5351.
+(rerunfilecheck)             Checksum: AA98424C930DECE47105393C6E69A28D;5419.
  ) 
 Here is how much of TeX's memory you used:
- 18377 strings out of 476315
- 321992 string characters out of 5785780
+ 18985 strings out of 476315
+ 329907 string characters out of 5785780
  1862068 words of memory out of 5000000
- 38417 multiletter control sequences out of 15000+600000
- 551565 words of font info for 81 fonts, out of 8000000 for 9000
+ 38994 multiletter control sequences out of 15000+600000
+ 558052 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,9n,90p,2346b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.pdf" (12 pages, 114545 bytes).
+<C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/esint-type1/esint10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.pdf" (13 pages, 129776 bytes).
 PDF statistics:
- 294 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 225 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 319 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
+ 233 words of extra memory for PDF output out of 10000 (max. 10000000)
 

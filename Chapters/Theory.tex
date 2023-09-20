@@ -26,9 +26,9 @@ In differential form for the stationary case, these are as follows:
     \label{eq:maxwell1}                                                    \\
     \nabla \times \vb{E} & = -\frac{\partial}{\partial t}\vb{B}
     \label{eq:maxwell2}                                                    \\
-    \nabla \vb{B}        & = \vb{0}
+    \nabla \cdot \vb{B}        & = \vb{0}
     \label{eq:maxwell3}                                                    \\
-    \nabla \vb{D}        & = \rho
+    \nabla \cdot \vb{D}        & = \rho
     \label{:eqmaxwell4}
 \end{align}
 Since we're dealing with measurement of magnetic fields in this thesis,
@@ -45,10 +45,30 @@ linear, homogenous across its domain, invariant depending on direction, and
 stationary. Since the magnetic measurements are made inside the empty aperture
 of the magnet, the domain is only made up of air. Thus, equation \ref{eq:BHmap}
 holds, and the magnetic permeability is the one of free space, that is
-$\mu = \mu_0 = 4\pi \times 10^{-7} Hm^{-1}$. \cite[Ch.4]{russenschuck2011field}
+$\mu = \mu_0 = 4\pi \times 10^{-7} Hm^{-1}$. \cite[Ch.4.1-4.4]{russenschuck2011field}
 
 
-\subsection{The magnetic field and induction}
+\subsection{Magnetic Flux and Induction}
+Magnetic flux $\Phi$ is the total amount of $\vb{B}$ through a certain surface.
+Mathematically, it is defined as:
+\begin{equation}
+    \Phi(\area) = \iint\limits_{\area} \vb{B} \cdot \nvec\, d\area
+\end{equation}
+where $\area$ is the surface, and $\nvec$ is the normal vector to the surface.
+We then have the following governing laws of electromagnetism for objects at rest:
+\begin{align}
+    \epsilon(\partial\area) = -\frac{d}{dt}\Phi(\area)
+    \label{eq:faraday}\\
+    \Phi(\partial\Volume) = 0
+    \label{eq:fluxcons}
+\end{align}
+Equation \ref{eq:faraday}, also called faradays law, describes the voltage\
+$\epsilon$ induced in a length of wire $\partial\area$, enclosing an area
+$\area$, when the magnetic flux $\Phi$ is changing with respect to time.
+Equation \ref{eq:fluxcons} states that the total amount of flux flowing
+through the boundary $\partial\Volume$ of the volume
+$\Volume$ must equal 0. \cite[Ch.4.1.1]{russenschuck2011field}
+
 \subsection{Series decompositions of the magnetic field}
 \subsubsection{Cylindrical Coordinates}
 \subsubsection{Bessel Functions}

@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {1.2}Previous Work}{5}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Background}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Electromagnetic Fields}{6}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}The magnetic field and induction}{7}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.1}Magnetic Flux and Induction}{7}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Series decompositions of the magnetic field}{7}{subsection.2.1.2}%
 \contentsline {subsubsection}{Cylindrical Coordinates}{7}{section*.2}%
 \contentsline {subsubsection}{Bessel Functions}{7}{section*.3}%
@@ -30,3 +30,4 @@
 \contentsline {section}{\numberline {6.1}Metrological Characterization}{11}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Future Design Considerations}{11}{section.6.2}%
 \contentsline {chapter}{Units}{11}{section*.5}%
+\contentsline {chapter}{References}{13}{section*.7}%
