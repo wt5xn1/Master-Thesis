@@ -23,18 +23,18 @@ In differential form for the stationary case, these are as follows:
 
 \begin{align}
     \nabla \times \vb{H} & = \vb{J} + \frac{\partial}{\partial t}\vb{D}
-    \label{eq:maxwell1}                                                    \\
+    \label{eq:maxwell1}                                                 \\
     \nabla \times \vb{E} & = -\frac{\partial}{\partial t}\vb{B}
-    \label{eq:maxwell2}                                                    \\
-    \nabla \cdot \vb{B}        & = \vb{0}
-    \label{eq:maxwell3}                                                    \\
-    \nabla \cdot \vb{D}        & = \rho
+    \label{eq:maxwell2}                                                 \\
+    \nabla \cdot \vb{B}  & = \vb{0}
+    \label{eq:maxwell3}                                                 \\
+    \nabla \cdot \vb{D}  & = \rho
     \label{:eqmaxwell4}
 \end{align}
 Since we're dealing with measurement of magnetic fields in this thesis,
 equations \ref{eq:maxwell1} and \ref{eq:maxwell3} will naturally be of
 the most interest. In simple cases, the $\vb{H}$ and $\vb{B}$ field
-obey the easy relation 
+obey the easy relation
 \begin{equation}
     \vb{B} = \mu \vb{H}
     \label{eq:BHmap}
@@ -57,11 +57,29 @@ Mathematically, it is defined as:
 where $\area$ is the surface, and $\nvec$ is the normal vector to the surface.
 We then have the following governing laws of electromagnetism for objects at rest:
 \begin{align}
-    \epsilon(\partial\area) = -\frac{d}{dt}\Phi(\area)
-    \label{eq:faraday}\\
-    \Phi(\partial\Volume) = 0
+    \epsilon(\partial\area) & = -\frac{d}{dt}\Phi(\area)
+    \label{eq:faraday}                                   \\
+    \Phi(\partial\Volume)   & = 0
     \label{eq:fluxcons}
 \end{align}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figs/partialA}
+        \caption{An area $\area$ and its boundary $\partial \area$.}
+        \label{fig:partialA}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figs/partialV}
+        \caption{A volume $\Volume$ and its surface boundary $\partial \Volume$.}
+        \label{fig:partialV}
+    \end{subfigure}
+\end{figure}
+
 Equation \ref{eq:faraday}, also called faradays law, describes the voltage\
 $\epsilon$ induced in a length of wire $\partial\area$, enclosing an area
 $\area$, when the magnetic flux $\Phi$ is changing with respect to time.

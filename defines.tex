@@ -1,3 +1,22 @@
-\newcommand{\area}{\mathit{A}}
+\newcommand{\area}{\mathrm{A}}
 \newcommand{\Volume}{\mathrm{V}}
 \newcommand{\nvec}{\hat{\vb{n}}}
+
+\newcommand{\subfigures}[4][0]{
+    \begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.4\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{#1}
+            \caption{#2}
+            \label{fig:#1}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.4\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{#3}
+            \caption{#4}
+            \label{fig:#3}
+        \end{subfigure}
+    \end{figure}
+}
