@@ -29,17 +29,19 @@ In differential form for the stationary case, these are as follows:
     \nabla \cdot \vb{B}  & = \vb{0}
     \label{eq:maxwell3}                                                 \\
     \nabla \cdot \vb{D}  & = \rho
-    \label{:eqmaxwell4}
+    \label{eq:maxwell4}
 \end{align}
 Since we're dealing with measurement of magnetic fields in this thesis,
 equations \ref{eq:maxwell1} and \ref{eq:maxwell3} will naturally be of
-the most interest. In simple cases, the $\vb{H}$ and $\vb{B}$ field
-obey the easy relation
-\begin{equation}
-    \vb{B} = \mu \vb{H}
-    \label{eq:BHmap}
-\end{equation}
-where $\mu$ is the \emph{magnetic permeability} in the domain of interest.
+the most interest. In simple cases, the $\vb{H}, \vb{D}, \vb{E}$ and
+$\vb{B}$ field obey the easy relations
+\begin{align}
+    \vb{B} & = \mu \vb{H}
+    \label{eq:BHmap}           \\
+    \vb{D} & = \epsilon \vb{E}
+\end{align}
+where $\mu$ is the \emph{magnetic permeability} and $U$ is the
+\emph{electric permittivity} in the domain of interest.
 Formally, simple cases are where the fields are located in a medium that is
 linear, homogenous across its domain, invariant depending on direction, and
 stationary. Since the magnetic measurements are made inside the empty aperture
@@ -49,7 +51,8 @@ $\mu = \mu_0 = 4\pi \times 10^{-7} Hm^{-1}$. \cite[Ch.4.1-4.4]{russenschuck2011f
 
 
 \subsection{Magnetic Flux and Induction}
-Magnetic flux $\Phi$ is the total amount of $\vb{B}$ through a certain surface.
+Magnetic flux $\Phi$ is the surface integral of the $\vb{B}$ field
+along the normal vector to the surface.
 Mathematically, it is defined as:
 \begin{equation}
     \Phi(\area) = \iint\limits_{\area} \vb{B} \cdot \nvec\, d\area
@@ -57,9 +60,9 @@ Mathematically, it is defined as:
 where $\area$ is the surface, and $\nvec$ is the normal vector to the surface.
 We then have the following governing laws of electromagnetism for objects at rest:
 \begin{align}
-    \epsilon(\partial\area) & = -\frac{d}{dt}\Phi(\area)
-    \label{eq:faraday}                                   \\
-    \Phi(\partial\Volume)   & = 0
+    U(\partial\area)      & = -\frac{d}{dt}\Phi(\area)
+    \label{eq:faraday}                                 \\
+    \Phi(\partial\Volume) & = 0
     \label{eq:fluxcons}
 \end{align}
 
@@ -67,27 +70,64 @@ We then have the following governing laws of electromagnetism for objects at res
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{figs/partialA}
-        \caption{An area $\area$ and its boundary $\partial \area$.}
+        \includegraphics[height=125pt]{figs/partialA}
+        \caption{An area $\area$ and its boundary $\partial \area$. }
         \label{fig:partialA}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{figs/partialV}
+        \includegraphics[height=125pt]{figs/partialV}
         \caption{A volume $\Volume$ and its surface boundary $\partial \Volume$.}
         \label{fig:partialV}
     \end{subfigure}
 \end{figure}
-
 Equation \ref{eq:faraday}, also called faradays law, describes the voltage\
 $\epsilon$ induced in a length of wire $\partial\area$, enclosing an area
 $\area$, when the magnetic flux $\Phi$ is changing with respect to time.
+The signs of $U$ and $\Phi$ obey the right hand rule as indicated
+in figure \ref{fig:partialA}.
+
 Equation \ref{eq:fluxcons} states that the total amount of flux flowing
 through the boundary $\partial\Volume$ of the volume
 $\Volume$ must equal 0. \cite[Ch.4.1.1]{russenschuck2011field}
 
 \subsection{Series decompositions of the magnetic field}
+The magnetic field can be calculated in some different ways, either
+directly from Maxwells equations or using Biot-Savarts law:
+\begin{equation}
+    \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\limits_\Volume
+    \frac{\nabla \times \vb{J}(\vb{r'})}{|\vb{r} - \vb{r'}|} d\Volume
+\end{equation}
+where $\vb{B}(\vb{r})$ is the $\vb{B}$ field at coordinate $\vb{r}$ and
+$\vb{J}(\vb{r'})$ is the current distribution at coordinate $\vb{r'}$.
+\cite[Ch.5.4]{russenschuck2011field}
+Except for very simple geometries, the magnetic field is rarely
+expressible using elementary functions. A common method is then
+to express it using fourier series solutions inside a specified domain.
+\cite[Ch.6]{russenschuck2011field}
+
+Inside the aperture of a magnet, the domain is free of currents and made
+up of air or vacuum. The current powering the magnet is constant,
+meaning we have a constant electric field. Equation \ref{eq:maxwell1}
+can then be rewritten as follows:
+\begin{align}
+    \begin{split}
+        \nabla \times \vb{H} &= \mu_0\nabla \times \vb{B}\\
+        \mu_0\nabla \times \vb{B}
+        &=\vb{J} + \frac{\partial}{\partial t}\vb{D}
+        \Bigg\vert_{\substack{\vb{J}=\vb{0} \\
+                \frac{\partial}{\partial t}\vb{D}=\vb{0}}} \\
+        &= \vb{0}
+    \end{split}
+\end{align}
+This, along with equation \ref{eq:maxwell3} means that there
+exists a magnetic scalar potential $\Psi(\vb{r})$ that satisfies
+Laplace's equation
+\begin{equation}
+    \nabla^2\Psi = 0
+\end{equation}
+inside the domain.
 \subsubsection{Cylindrical Coordinates}
 \subsubsection{Bessel Functions}
 \subsubsection{Bessel-Fourier-Fourier Series}

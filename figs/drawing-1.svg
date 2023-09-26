@@ -25,8 +25,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.1893044"
-     inkscape:cx="224.50098"
-     inkscape:cy="183.30042"
+     inkscape:cx="38.678071"
+     inkscape:cy="174.05132"
      inkscape:window-width="1920"
      inkscape:window-height="1137"
      inkscape:window-x="-8"
@@ -35,6 +35,25 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker1141"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1139" />
+    </marker>
     <marker
        style="overflow:visible"
        id="TriangleStart"
@@ -65,14 +84,21 @@
        cx="104.98903"
        cy="42.527683"
        rx="26.80751"
-       ry="28.476028" />
+       ry="28.476028"
+       inkscape:export-filename="partialV.png"
+       inkscape:export-xdpi="264.8197"
+       inkscape:export-ydpi="264.8197" />
     <ellipse
-       style="font-variation-settings:normal;vector-effect:none;fill:#37abc8;fill-opacity:1;stroke:#d45500;stroke-width:0.799999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
+       style="font-variation-settings:normal;vector-effect:none;fill:#37abc8;fill-opacity:1;stroke:#d45500;stroke-width:0.799999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-start:url(#marker1141);stop-color:#000000"
        id="path296-7"
-       cx="37.439617"
-       cy="42.527683"
+       cx="1.4346596"
+       cy="57.293266"
        rx="27.908676"
-       ry="27.436749" />
+       ry="27.436749"
+       transform="rotate(-39.668282)"
+       inkscape:export-filename="partialA.png"
+       inkscape:export-xdpi="265.57007"
+       inkscape:export-ydpi="265.57007" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.799999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
        id="path296-0"

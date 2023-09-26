@@ -5,29 +5,29 @@
 \contentsline {chapter}{\numberline {2}Background}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Electromagnetic Fields}{6}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Magnetic Flux and Induction}{7}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Series decompositions of the magnetic field}{7}{subsection.2.1.2}%
-\contentsline {subsubsection}{Cylindrical Coordinates}{7}{section*.4}%
-\contentsline {subsubsection}{Bessel Functions}{7}{section*.5}%
-\contentsline {subsubsection}{Bessel-Fourier-Fourier Series}{7}{section*.6}%
-\contentsline {section}{\numberline {2.2}Signal Processing}{7}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Filters}{7}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Least Squares Fitting}{7}{subsection.2.2.2}%
-\contentsline {chapter}{\numberline {3}The Translating Coil Magnetometer}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}PCB printed coils}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Positional Encoder}{8}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Geometric Lidar Measurements}{8}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Fast Digital Integrators}{8}{section.3.4}%
-\contentsline {section}{\numberline {3.5}The Measurement Assembly}{8}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Measurements}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Solenoidal Field Maps}{9}{section.4.1}%
-\contentsline {section}{\numberline {4.2}The Magnet-Magnetometer Yaw Angle Peak Shift}{9}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Post Processing}{10}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Lidar Scans}{10}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Coil Induction Analysis}{10}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Bessel-Fourier-Fourier Series Fitting}{10}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Estimating the Magnet-Magnetometer Yaw Angle}{10}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Discussion}{11}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Metrological Characterization}{11}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Future Design Considerations}{11}{section.6.2}%
-\contentsline {chapter}{Units}{11}{section*.7}%
-\contentsline {chapter}{References}{13}{section*.9}%
+\contentsline {subsection}{\numberline {2.1.2}Series decompositions of the magnetic field}{8}{subsection.2.1.2}%
+\contentsline {subsubsection}{Cylindrical Coordinates}{8}{section*.4}%
+\contentsline {subsubsection}{Bessel Functions}{8}{section*.5}%
+\contentsline {subsubsection}{Bessel-Fourier-Fourier Series}{8}{section*.6}%
+\contentsline {section}{\numberline {2.2}Signal Processing}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Filters}{8}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Least Squares Fitting}{8}{subsection.2.2.2}%
+\contentsline {chapter}{\numberline {3}The Translating Coil Magnetometer}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}PCB printed coils}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Positional Encoder}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Geometric Lidar Measurements}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Fast Digital Integrators}{9}{section.3.4}%
+\contentsline {section}{\numberline {3.5}The Measurement Assembly}{9}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Measurements}{10}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Solenoidal Field Maps}{10}{section.4.1}%
+\contentsline {section}{\numberline {4.2}The Magnet-Magnetometer Yaw Angle Peak Shift}{10}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Post Processing}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Lidar Scans}{11}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Coil Induction Analysis}{11}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Bessel-Fourier-Fourier Series Fitting}{11}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Estimating the Magnet-Magnetometer Yaw Angle}{11}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Discussion}{12}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Metrological Characterization}{12}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Future Design Considerations}{12}{section.6.2}%
+\contentsline {chapter}{Units}{12}{section*.7}%
+\contentsline {chapter}{References}{14}{section*.9}%
