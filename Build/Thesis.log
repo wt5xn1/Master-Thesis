@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.7.27)  26 SEP 2023 17:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.7.27)  29 SEP 2023 16:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -717,17 +717,17 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 1EEC333777A8AD254997F5E040653A97;5419.
  ) 
 Here is how much of TeX's memory you used:
- 20576 strings out of 476315
- 361198 string characters out of 5785780
- 1861068 words of memory out of 5000000
+ 20580 strings out of 476315
+ 361231 string characters out of 5785780
+ 1862068 words of memory out of 5000000
  40548 multiletter control sequences out of 15000+600000
- 577148 words of font info for 135 fonts, out of 8000000 for 9000
+ 579012 words of font info for 138 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,20n,90p,2346b,659s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/esint-type1/esint10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.pdf" (14 pages, 213296 bytes).
+Output written on "c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.pdf" (14 pages, 214110 bytes).
 PDF statistics:
- 345 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
+ 346 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
  243 words of extra memory for PDF output out of 10000 (max. 10000000)
 

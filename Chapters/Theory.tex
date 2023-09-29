@@ -122,13 +122,22 @@ can then be rewritten as follows:
     \end{split}
 \end{align}
 This, along with equation \ref{eq:maxwell3} means that there
-exists a magnetic scalar potential $\Psi(\vb{r})$ that satisfies
+exists a magnetic scalar potential $\Psi(\vb{r})$ of $\vb{B}$ that satisfies
 Laplace's equation
 \begin{equation}
-    \nabla^2\Psi = 0
+    \nabla^2\Psi = \frac{\partial^2 \Psi}{\partial x^2}
+    + \frac{\partial^2 \Psi}{\partial y^2}
+    + \frac{\partial^2 \Psi}{\partial z^2} = 0
 \end{equation}
-inside the domain.
+inside the domain, where the $\vb{B}$ field components are
+\begin{equation}
+    B_x = \frac{\partial \Psi}{\partial x}, \,
+    B_y = \frac{\partial \Psi}{\partial y}, \,
+    B_z = \frac{\partial \Psi}{\partial z}
+\end{equation}
 \subsubsection{Cylindrical Coordinates}
+Since the aperture of our magnet is cylindrical, working in cylindrical
+coordinates is a natural choice.
 \subsubsection{Bessel Functions}
 \subsubsection{Bessel-Fourier-Fourier Series}
 
