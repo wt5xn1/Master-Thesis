@@ -137,7 +137,31 @@ inside the domain, where the $\vb{B}$ field components are
 \end{equation}
 \subsubsection{Cylindrical Coordinates}
 Since the aperture of our magnet is cylindrical, working in cylindrical
-coordinates is a natural choice.
+coordinates $(r, \varphi, z)$ is a natural choice. They are related to the cartesian
+system $(x, y, z)$ through the relations:
+
+\begin{align}
+    \begin{split}
+        x &= r\cos \varphi \\
+        y &= r\sin \varphi \\
+        z &= z
+    \end{split}
+\end{align}
+
+A vector $\vb{v}$ is defined by its distance $r$ from the origin, its
+angle $\varphi$ from the $x$-axis, and its offset in $z$ as
+$\vb{v}(r, \varphi, z)  = (r\cos \varphi, r\sin \varphi, z)$.
+Where in cartesian coordinates we have
+the basis vectors $\vb{\hat{e}_x}, \vb{\hat{e}_y}, \vb{\hat{e}_z}$
+along the x, y and z axis, in cylindrical coordinates we have
+$\vb{\hat{e}_r}, \vb{\hat{e}_\varphi}, \vb{\hat{e}_z}$ as illustrated in
+figure \ref{fig:cylcoords}.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+    \includegraphics[width=0.5\textwidth]{figs/cylcoords}
+    \caption{Cylindrical coordinates and their relationship to cartesian coordinates.}
+    \label{fig:cylcoords}
+\end{wrapfigure}
 \subsubsection{Bessel Functions}
 \subsubsection{Bessel-Fourier-Fourier Series}
 
