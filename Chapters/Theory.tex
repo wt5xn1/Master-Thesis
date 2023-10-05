@@ -92,7 +92,7 @@ Equation \ref{eq:fluxcons} states that the total amount of flux flowing
 through the boundary $\partial\Volume$ of the volume
 $\Volume$ must equal 0. \cite[Ch.4.1.1]{russenschuck2011field}
 
-\subsection{Series decompositions of the magnetic field}
+\section{Series decompositions of the magnetic field}
 The magnetic field can be calculated in some different ways, either
 directly from Maxwells equations or using Biot-Savarts law:
 \begin{equation}
@@ -128,6 +128,7 @@ Laplace's equation
     \nabla^2\Psi = \frac{\partial^2 \Psi}{\partial x^2}
     + \frac{\partial^2 \Psi}{\partial y^2}
     + \frac{\partial^2 \Psi}{\partial z^2} = 0
+    \label{eq:laplacian_zero}
 \end{equation}
 inside the domain, where the $\vb{B}$ field components are
 \begin{equation}
@@ -135,7 +136,7 @@ inside the domain, where the $\vb{B}$ field components are
     B_y = \frac{\partial \Psi}{\partial y}, \,
     B_z = \frac{\partial \Psi}{\partial z}
 \end{equation}
-\subsubsection{Cylindrical Coordinates}
+\subsection{Cylindrical Coordinates}
 Since the aperture of our magnet is cylindrical, working in cylindrical
 coordinates $(r, \varphi, z)$ is a natural choice. They are related to the cartesian
 system $(x, y, z)$ through the relations:
@@ -148,22 +149,97 @@ system $(x, y, z)$ through the relations:
     \end{split}
 \end{align}
 
-A vector $\vb{v}$ is defined by its distance $r$ from the origin, its
-angle $\varphi$ from the $x$-axis, and its offset in $z$ as
-$\vb{v}(r, \varphi, z)  = (r\cos \varphi, r\sin \varphi, z)$.
-Where in cartesian coordinates we have
-the basis vectors $\vb{\hat{e}_x}, \vb{\hat{e}_y}, \vb{\hat{e}_z}$
-along the x, y and z axis, in cylindrical coordinates we have
-$\vb{\hat{e}_r}, \vb{\hat{e}_\varphi}, \vb{\hat{e}_z}$ as illustrated in
-figure \ref{fig:cylcoords}.
-
 \begin{wrapfigure}{r}{0.5\textwidth}
     \includegraphics[width=0.5\textwidth]{figs/cylcoords}
     \caption{Cylindrical coordinates and their relationship to cartesian coordinates.}
     \label{fig:cylcoords}
 \end{wrapfigure}
-\subsubsection{Bessel Functions}
-\subsubsection{Bessel-Fourier-Fourier Series}
+
+A vector $\vb{v}$ is defined by its distance $r$ from the origin, its
+angle $\varphi$ from the $x$-axis, and its offset in $z$ as
+$\vb{v}(r, \varphi, z)  = (r\cos \varphi, r\sin \varphi, z)$.
+Where in cartesian coordinates we have
+the basis vectors $\ex, \ey, \ez$
+along the x, y and z axis, in cylindrical coordinates we have
+$\er, \ephi, \ez$ as illustrated in
+figure \ref{fig:cylcoords}. Note that $\er$ and $\ephi$
+change direction depending on the current value of $\varphi$.
+
+\subsubsection{Scaling Factors}
+In cylindrical coordinates, scaling factors are needed for
+common differential operators. For a scalar field $\Psi(r, \varphi, z)$
+the gradient is defined as
+\begin{equation}
+    \nabla \Psi = \frac{\partial \Psi}{\partial r} \er +
+    \frac{1}{r} \frac{\partial \Psi}{\partial \varphi} \ephi +
+    \frac{\partial \Psi}{\partial z} \ez
+    \label{eq:cylgrad}
+\end{equation}
+
+The divergence of a vector field $\vb{V}(r, \varphi, z)$ is
+\begin{equation}
+    \nabla \cdot \vb{V} = \frac{1}{r} \frac{\partial}{\partial r} (rV_r)
+    + \frac{1}{r} \frac{\partial V_\varphi}{\partial \varphi}
+    + \frac{\partial V_z}{\partial z}
+    \label{eq:cyldiv}
+\end{equation}
+which gives the laplacian $\nabla^2 \Psi = \nabla \cdot \nabla \Psi (r, \varphi, z)$
+\begin{equation}
+    \nabla^2 \Psi =
+    \frac{1}{r} \frac{\partial}{\partial r} \left(r\frac{\partial \Psi}{\partial}\right)
+    + \frac{1}{r^2} \frac{\partial^2 \Psi}{\partial \varphi^2}
+    + \frac{\partial^2 \Psi}{\partial z^2}
+    \label{eq:cyl_laplacian}
+\end{equation}
+\cite[Ch.3.13]{russenschuck2011field}
+\subsubsection{The Laplace Equation in Cylindrical Coordinates}
+One way to solve the laplacian is to use separation of variables
+technique to find the set of potential solutions, and from that
+set choose the ones that make sense for our problem.
+
+Firstly, we make the ansatz that the solutions can be written in
+the form
+\begin{equation}
+    \Psi(r, \varphi, z) = R(r)\varPhi(\varphi)Z(z)
+    \label{eq:psi_ansatz}
+\end{equation}
+
+Insertion of equation \ref{eq:psi_ansatz} into \ref{eq:cyl_laplacian}
+then gives us
+\begin{equation}
+    \nabla^2 \Psi = \frac{1}{rR} \frac{d}{dr} \left(\frac{dR}{dr} \right)
+    + \frac{1}{r^2 \varPhi} \frac{d^2 \varPhi}{d\varphi^2}
+    + \frac{1}{Z} \frac{d^2 Z}{dz^2}
+    \label{eq:sepLaplacian}
+\end{equation}
+
+We know from equation \ref{eq:laplacian_zero} that this is equal to zero,
+and can therefore rewrite as
+\begin{equation}
+    -\frac{1}{\varPhi} \frac{d^2 \varPhi}{d\varphi^2} =
+    \frac{r}{R} \frac{d}{dr} \left(\frac{dR}{dr} \right)
+    + \frac{r^2}{Z} \frac{d^2 Z}{dz^2}
+\end{equation}
+Here, a contradiction emerges. A change in $\varphi$ can only
+introduce a change in the left hand side of this equation. Likewise,
+this equality must still hold for a change in $r$ or $z$. These
+conditions only hold under the assumption that both sides are constant,
+such that
+\begin{equation}
+    \frac{1}{\varPhi} \frac{d^2 \varPhi}{d\varphi^2} = \alpha_1
+\end{equation}
+where $\alpha_1$ is constant. Using similar reasoning for $Z(z)$
+and $R(r)$ we can reduce this partial differential equation to
+a system of ordinary differential equations.
+\begin{align}
+    \frac{d^2R}{dr^2} + \frac{1}{r} \frac{dR}{dr} & =
+    \left( \frac{\alpha_1}{r^2} + \alpha_2 \right)R                   \\
+    \frac{d^2 \varPhi}{d\varphi^2}                & = \alpha_1\varPhi \\
+    \frac{d^2 Z}{dz^2}                            & = \alpha_2 Z
+\end{align}
+
+\subsection{Bessel Functions}
+\subsection{Bessel-Fourier-Fourier Series}
 
 \section{Signal Processing}
 \subsection{Filters}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.7.27)  4 OCT 2023 15:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.7.27)  5 OCT 2023 17:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -687,7 +687,7 @@ File: uesint.fd
 ] [6
 
 ]
-<figs/partialA.png, id=223, 159.75473pt x 190.1842pt>
+<figs/partialA.png, id=241, 159.75473pt x 190.1842pt>
 File: figs/partialA.png Graphic file (type png)
 <use figs/partialA.png>
 Package pdftex.def Info: figs/partialA.png  used on input line 73.
@@ -698,7 +698,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
-<figs/partialV.png, id=225, 199.90155pt x 190.90189pt>
+<figs/partialV.png, id=243, 199.90155pt x 190.90189pt>
 File: figs/partialV.png Graphic file (type png)
 <use figs/partialV.png>
 Package pdftex.def Info: figs/partialV.png  used on input line 80.
@@ -707,41 +707,51 @@ Package pdftex.def Info: figs/partialV.png  used on input line 80.
 Underfull \vbox (badness 1817) has occurred while \output is active []
 
  [7 <./figs/partialA.png> <./figs/partialV.png>]
-<figs/cylcoords.png, id=248, 336.41685pt x 465.78015pt>
+<figs/cylcoords.png, id=265, 336.41685pt x 465.78015pt>
 File: figs/cylcoords.png Graphic file (type png)
 <use figs/cylcoords.png>
-Package pdftex.def Info: figs/cylcoords.png  used on input line 161.
+Package pdftex.def Info: figs/cylcoords.png  used on input line 153.
 (pdftex.def)             Requested size: 170.71652pt x 236.36493pt.
- [8]) (Chapters/coil-magnetometer.tex [9 <./figs/cylcoords.png>]) (Chapters/measurements.tex [10
+ [8]
+Underfull \hbox (badness 1062) in paragraph at lines 169--172
+\T1/ptm/m/n/11 In cylin-dri-cal co-or-di-nates, scal-ing
+ []
 
-]) (Chapters/post_processing.tex [11
 
-]) (Chapters/discussion.tex [12
+Underfull \hbox (badness 1721) in paragraph at lines 179--180
+[]\T1/ptm/m/n/11 The di-ver-gence of a vec-tor field
+ []
 
-]) (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.gls) (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.unit [13
+[9 <./figs/cylcoords.png>]) (Chapters/coil-magnetometer.tex [10]) (Chapters/measurements.tex [11
 
-]) [14
+]) (Chapters/post_processing.tex [12
 
-] (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.bbl) [15
+]) (Chapters/discussion.tex [13
+
+]) (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.gls) (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.unit [14
+
+]) [15
+
+] (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.bbl) [16
 
 
 
 ] (c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.aux)
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: BC997C1749D7CE944E0C853EE307DAD4;5420.
+(rerunfilecheck)             Checksum: FFC875B439BA52ADA99FD29B3B5942D6;6036.
  ) 
 Here is how much of TeX's memory you used:
- 20671 strings out of 476315
- 362889 string characters out of 5785780
- 1864068 words of memory out of 5000000
- 40631 multiletter control sequences out of 15000+600000
+ 20698 strings out of 476315
+ 363230 string characters out of 5785780
+ 1866068 words of memory out of 5000000
+ 40645 multiletter control sequences out of 15000+600000
  579012 words of font info for 138 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,20n,90p,2346b,659s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/public/esint-type1/esint10.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.pdf" (15 pages, 273110 bytes).
+Output written on "c:/Users\vmattsso\cernbox\Documents\Presentations\Report - Master Thesis\Build\Thesis.pdf" (16 pages, 292101 bytes).
 PDF statistics:
- 356 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
- 248 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 394 PDF objects out of 1000 (max. 8388607)
+ 82 named destinations out of 1000 (max. 500000)
+ 272 words of extra memory for PDF output out of 10000 (max. 10000000)
 
