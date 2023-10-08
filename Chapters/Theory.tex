@@ -90,14 +90,15 @@ in figure \ref{fig:partialA}.
 
 Equation \ref{eq:fluxcons} states that the total amount of flux flowing
 through the boundary $\partial\Volume$ of the volume
-$\Volume$ must equal 0. \cite[Ch.4.1.1]{russenschuck2011field}
+$\Volume$ must equal 0.\cite[Ch.4.1.1]{russenschuck_field_2011}
 
 \section{Series decompositions of the magnetic field}
-The magnetic field can be calculated in some different ways, either
+The magnetic field can be calculated in some different ways, for instance
 directly from Maxwells equations or using Biot-Savarts law:
 \begin{equation}
     \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\limits_\Volume
-    \frac{\nabla \times \vb{J}(\vb{r'})}{|\vb{r} - \vb{r'}|} d\Volume
+    \frac{\vb{J}(\vb{r'})\times (\vb{r} - \vb{r'})}
+    {|\vb{r} - \vb{r'}|^3} d\Volume
 \end{equation}
 where $\vb{B}(\vb{r})$ is the $\vb{B}$ field at coordinate $\vb{r}$ and
 $\vb{J}(\vb{r'})$ is the current distribution at coordinate $\vb{r'}$.
@@ -229,17 +230,86 @@ such that
     \frac{1}{\varPhi} \frac{d^2 \varPhi}{d\varphi^2} = \alpha_1
 \end{equation}
 where $\alpha_1$ is constant. Using similar reasoning for $Z(z)$
-and $R(r)$ we can reduce this partial differential equation to
+and then $R(r)$ we can reduce this partial differential equation to
 a system of ordinary differential equations.
 \begin{align}
     \frac{d^2R}{dr^2} + \frac{1}{r} \frac{dR}{dr} & =
-    \left( \frac{\alpha_1}{r^2} + \alpha_2 \right)R                   \\
-    \frac{d^2 \varPhi}{d\varphi^2}                & = \alpha_1\varPhi \\
+    \left( \frac{\alpha_1}{r^2} + \alpha_2 \right)R
+    \label{eq:diffeqR}                                                \\
+    \frac{d^2 \varPhi}{d\varphi^2}                & = \alpha_1\varPhi
+    \label{eq:diffeqPhi}                                              \\
     \frac{d^2 Z}{dz^2}                            & = \alpha_2 Z
+    \label{eq:diffeqZ}
 \end{align}
 
+While the differential equations in $\varPhi$ and $Z$ have a well defined
+set of solutions using elementary functions like sines, cosines and exponentials,
+equation \ref*{eq:diffeqR} is a bit trickier. This equation is known as
+the Bessel differential equation, and solving it will require a
+set of functions known as the Bessel functions.
+
 \subsection{Bessel Functions}
+The Bessel functions are defined as the solutions to equation \ref*{eq:diffeqR}.
+They come in several different variants depending on the values of $\alpha_1$ and
+$\alpha_2$. They are not expressible using elementary functions and are therefore
+often approximated using power series solutions, generating functions
+or numeric integration.
+
+The actual calculation of the Bessel functions is outside the scope of this thesis,
+more than stating that they are implemented in most popular programming languages.
+Still, a short overview of the properties of the most relevant subset of Bessel
+functions will aid greatly in finding the solutions to our magnetic scalar potential.
+
+\subsubsection{Bessel Function, First Kind}
+
+The Bessel function of the first kind is a collection of functions that are nonsingular
+at the origin. It is often denoted $\Jn{n}(x)$. Figure \ref*{fig:Jnplot} shows
+$\Jn{n}(x)$ for $n=0,1,2,3,4$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Jnplot.png}
+    \caption{Bessel functions of the first kind, for $n\in[0,4]$.}
+    \label{fig:Jnplot}
+\end{figure}
+
+For negative $n$ we have
+\begin{equation}
+    \Jn{-n}(x) = (-1)^n \Jn{n}(x)
+\end{equation}
+
+\subsubsection{Modified Bessel Function, First Kind}
+For the bessel function of the first kind with imaginary
+arguments, the modified Bessel function $\In{n}(x)$ is often used.
+It is related to the regular first kind Bessel function
+through the equality
+\begin{equation}
+    \In{n}(x) = j^{-n}\Jn{n}(jx)
+\end{equation}
+
+The first five terms of $\In{n}$ can be seen in figure \ref*{fig:Inplot}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Inplot.png}
+    \caption{Modified Bessel functions of the first kind, for $n\in[0,4]$.}
+    \label{fig:Inplot}
+\end{figure}
+
+\subsubsection{Bessel Function, Second Kind}
+The bessel function of the second kind is a solution to
+the bessel differential equation that is singular at the
+origin. It can be seen in figure \ref{fig:Ynplot}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Ynplot.png}
+    \caption{Bessel functions of the second kind, for $n\in[0,4]$.}
+    \label{fig:Ynplot}
+\end{figure}
+
 \subsection{Bessel-Fourier-Fourier Series}
+With
 
 \section{Signal Processing}
 \subsection{Filters}
