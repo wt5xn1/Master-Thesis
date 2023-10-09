@@ -12,6 +12,24 @@
 \newcommand{\In}[1]{\mathit{I}_{#1}}
 \newcommand{\Yn}[1]{\mathit{Y}_{#1}}
 
+% BFF series
+\newcommand{\Cnk}[1][nk]{\mathfrak{C}_{#1}}
+\newcommand{\Bffok}{
+    \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty 
+    \Cnk[0,k] \In{0} \left( \frac{2\pi}{L}|k|r \right)
+    \exp \left( j \frac{2\pi}{L}kz \right)
+}
+\newcommand{\Bffno}{
+    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty 
+    \Cnk[n,0] r^{|n|}\exp(jn\varphi)
+}
+\newcommand{\Bffnk}{
+    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty 
+    \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty 
+    \Cnk[n,k] j^{-k}\In{|n|} \left( \frac{2\pi}{L}|k|r \right)
+    \exp \left( j \frac{2\pi}{L}kz \right)
+    \exp(jn\varphi)
+}
 
 \newcommand{\subfigures}[4][0]{
     \begin{figure}

@@ -47,7 +47,7 @@ linear, homogenous across its domain, invariant depending on direction, and
 stationary. Since the magnetic measurements are made inside the empty aperture
 of the magnet, the domain is only made up of air. Thus, equation \ref{eq:BHmap}
 holds, and the magnetic permeability is the one of free space, that is
-$\mu = \mu_0 = 4\pi \times 10^{-7} Hm^{-1}$. \cite[Ch.4.1-4.4]{russenschuck2011field}
+$\mu = \mu_0 = 4\pi \times 10^{-7} Hm^{-1}$. \cite[Ch.4.1-4.4]{russenschuck_field_2011}
 
 
 \subsection{Magnetic Flux and Induction}
@@ -99,14 +99,15 @@ directly from Maxwells equations or using Biot-Savarts law:
     \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\limits_\Volume
     \frac{\vb{J}(\vb{r'})\times (\vb{r} - \vb{r'})}
     {|\vb{r} - \vb{r'}|^3} d\Volume
+    \label{eq:Biot_Savart}
 \end{equation}
 where $\vb{B}(\vb{r})$ is the $\vb{B}$ field at coordinate $\vb{r}$ and
 $\vb{J}(\vb{r'})$ is the current distribution at coordinate $\vb{r'}$.
-\cite[Ch.5.4]{russenschuck2011field}
+\cite[Ch.5.4]{russenschuck_field_2011}
 Except for very simple geometries, the magnetic field is rarely
 expressible using elementary functions. A common method is then
 to express it using fourier series solutions inside a specified domain.
-\cite[Ch.6]{russenschuck2011field}
+\cite[Ch.6]{russenschuck_field_2011}
 
 Inside the aperture of a magnet, the domain is free of currents and made
 up of air or vacuum. The current powering the magnet is constant,
@@ -192,7 +193,7 @@ which gives the laplacian $\nabla^2 \Psi = \nabla \cdot \nabla \Psi (r, \varphi,
     + \frac{\partial^2 \Psi}{\partial z^2}
     \label{eq:cyl_laplacian}
 \end{equation}
-\cite[Ch.3.13]{russenschuck2011field}
+\cite[Ch.3.13]{russenschuck_field_2011}
 \subsubsection{The Laplace Equation in Cylindrical Coordinates}
 One way to solve the laplacian is to use separation of variables
 technique to find the set of potential solutions, and from that
@@ -259,16 +260,16 @@ The actual calculation of the Bessel functions is outside the scope of this thes
 more than stating that they are implemented in most popular programming languages.
 Still, a short overview of the properties of the most relevant subset of Bessel
 functions will aid greatly in finding the solutions to our magnetic scalar potential.
-
+\cite{weisstein_bessel}
 \subsubsection{Bessel Function, First Kind}
 
 The Bessel function of the first kind is a collection of functions that are nonsingular
 at the origin. It is often denoted $\Jn{n}(x)$. Figure \ref*{fig:Jnplot} shows
-$\Jn{n}(x)$ for $n=0,1,2,3,4$.
+$\Jn{n}(x)$ for $n=0,1,2,3,4$.\cite{weisstein_bessel_first_kind}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/Jnplot.png}
+    \includegraphics[width=0.7\textwidth]{figs/Jnplot.png}
     \caption{Bessel functions of the first kind, for $n\in[0,4]$.}
     \label{fig:Jnplot}
 \end{figure}
@@ -286,12 +287,12 @@ through the equality
 \begin{equation}
     \In{n}(x) = j^{-n}\Jn{n}(jx)
 \end{equation}
-
+\cite{weisstein_modified}
 The first five terms of $\In{n}$ can be seen in figure \ref*{fig:Inplot}.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/Inplot.png}
+    \includegraphics[width=0.7\textwidth]{figs/Inplot.png}
     \caption{Modified Bessel functions of the first kind, for $n\in[0,4]$.}
     \label{fig:Inplot}
 \end{figure}
@@ -299,18 +300,147 @@ The first five terms of $\In{n}$ can be seen in figure \ref*{fig:Inplot}.
 \subsubsection{Bessel Function, Second Kind}
 The bessel function of the second kind is a solution to
 the bessel differential equation that is singular at the
-origin. It can be seen in figure \ref{fig:Ynplot}.
+origin. It can be seen in figure \ref{fig:Ynplot}.\cite{weisstein_bessel_second_kind}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/Ynplot.png}
+    \includegraphics[width=0.7\textwidth]{figs/Ynplot.png}
     \caption{Bessel functions of the second kind, for $n\in[0,4]$.}
     \label{fig:Ynplot}
 \end{figure}
 
 \subsection{Bessel-Fourier-Fourier Series}
-With
+With the set of potential solutions to $\Psi(r,\varphi,z)$ established,
+we can start to eliminate the impossible ones. The domain $\Omega$
+is spanned by the magnetometer and its path along the z axis, making up
+the cylindrical domain. Examples of this domain can be seen in figures
+\ref{fig:aligned_domain} and \ref{fig:unaligned_domain}. Keep in mind
+that the domain is always spanned by and relative to the magnetometer,
+and is thus the same regardless of the magnets relative positioning to
+the PCB.
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figs/aligned_domain.png}
+        \caption{The measurement domain $\Omega$
+            inside the aperture of a solenoid.}
+        \label{fig:aligned_domain}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figs/unaligned_domain.png}
+        \caption{The measurement domain $\Omega$
+            inside the aperture of an unaligned solenoid.}
+        \label{fig:unaligned_domain}
+    \end{subfigure}
+\end{figure}
+Using a table of known solutions to equations
+\ref{eq:diffeqR}-\ref{eq:diffeqZ} from the book "Field theory handbook"
+\cite{moon_field_1988} we can find the relevant ones.
 
+\begin{align*}
+    \frac{d^2R}{dr^2} + \frac{1}{r} \frac{dR}{dr} & =
+    \left( \frac{\alpha_1}{r^2} + \alpha_2 \right)R
+    \tag{\ref{eq:diffeqR} revisited}                                  \\
+    \frac{d^2 \varPhi}{d\varphi^2}                & = \alpha_1\varPhi
+    \tag{\ref{eq:diffeqPhi} revisited}                                \\
+    \frac{d^2 Z}{dz^2}                            & = \alpha_2 Z
+    \tag{\ref{eq:diffeqZ} revisited}
+\end{align*}
+
+Firstly, the measurements start and end far outside of the magnet,
+where the field is very close to zero. Thus, the sum of the solutions
+in $z$ must start and end at zero. Since the solutions must be periodic
+over the length of the domain, we have our first boundary condition
+\begin{align}
+    qkz  & = \frac{2\pi}{L}kz, \,k\in\mathbb{N}_1 \\
+    Z(z) & = 0\text{ if } z\in\{0,L\}
+\end{align}
+where $-(qk)^2 = \alpha_2$ and $L$ is the length of the domain in z.
+
+A Fourier series is then an appropriate solution.
+\begin{equation}
+    Z(z) = \sum\limits_{k=1}^{\infty}
+    A_{zk}\sin{(qkz)} + B_{zk}\cos{(qkz)}
+\end{equation}
+where $A_{zk}, B_{zk}$ are as of yet unknown coefficients.
+
+Secondly, since $\varPhi(\varphi)$ spans the whole circumference of
+$\Omega$, and the field is continuous inside the domain, we have
+our next boundary condition
+
+\begin{equation}
+    \varPhi(0) = \varPhi(2\pi)
+\end{equation}
+
+Once again, a Fourier series is an appropriate solution
+\begin{equation}
+    \varPhi(\varphi) = \sum\limits_{n=1}^{\infty}
+    A_{\varphi n}\sin{(n\varphi)} + B_{\varphi n}\cos{(n\varphi)}
+    , \, n\in\mathbb{N}_1
+\end{equation}
+giving us $\alpha_1 = -n^2$.
+
+With both $\alpha_1$ and $\alpha_2$ found, $R(r)$ in equation \ref{eq:diffeqR}
+is now completely determined as
+\begin{equation}
+    R(r) = \sum\limits_{k=0}^{\infty}
+    A_{rk}\Jn{k}(jqkr) + B_{rk}\Yn{k}(jqkr)
+\end{equation}
+Since we know that the magnetic field is not singular inside the aperture
+(Biot Savart, equation \ref{eq:Biot_Savart} gives us singularities only inside
+the current carrying wires.) we can immediately discard $\Yn{k}$ as potential
+solution. Since the argument for $\Jn{k}$ is imaginary, we can also substitute
+with the modified Bessel function of the first kind, giving us
+\begin{equation}
+    R(r) = \sum\limits_{k=1}^{\infty}
+    j^{-k}A_{rk}\In{k}(qkr)
+\end{equation}
+
+We still need to account for the fact that the $\vb{B}$-field might have
+a non zero mean over the domain, i.e. adding the zero terms of the series.
+For $Z(z)$, this is simply
+
+\begin{equation}
+    Z(z) = A_{z0}z
+\end{equation}
+
+while in $r$ this will be
+\begin{equation}
+    R(r) = \sum\limits_{n=1}^{\infty} A_{r0}r^n
+\end{equation}
+\cite[pp.12-14]{moon_field_1988}
+The $n=0$ terms for $R(r)$ and $\varPhi(\varphi)$ have been discarded,
+as that would be equivalent to a magnetic monopole, which have never
+been found experimentally, and is unlikely to be found using a simple
+solenoid magnet.\cite{Acharya2022}
+
+Now, all the potential solutions can be combined into one double
+series. By also converting the Fourier series from real to complex
+valued double sided series, we can combine the $A_{n,k}$ and $B_{n,k}$
+coefficients into one complex valued coefficient $\Cnk$.
+
+After a lot of algebra, this yields
+\begin{equation}
+    \begin{split}
+        \Psi(r,\varphi,z) &=\Cnk[0,0]z + \Bffok +\\
+        &+ \Bffno +\\ &+ \Bffnk
+    \end{split}
+\end{equation}
+
+It is worth noting that the third term in the above series
+are a form of commonly used two dimensional multipoles at CERN.
+These are mainly used for dipole, quadropole, sextupole and 
+higher order magnets with no or very little B-field 
+derivative along the z axis inside the aperture.
+\cite[Ch.6.1]{russenschuck_field_2011}
+
+\subsection{Fundamentals and Harmonics of the BFF series.}
+
+
+\newpage
 \section{Signal Processing}
 \subsection{Filters}
 \subsection{Least Squares Fitting}
