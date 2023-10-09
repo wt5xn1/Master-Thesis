@@ -12,40 +12,76 @@
 \newcommand{\In}[1]{\mathit{I}_{#1}}
 \newcommand{\Yn}[1]{\mathit{Y}_{#1}}
 
-% BFF series
+% BFF potential series
+\newcommand{\Bc}{\frac{2\pi}{L}}
 \newcommand{\Cnk}[1][nk]{\mathfrak{C}_{#1}}
-\newcommand{\Bffok}{
-    \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty 
-    \Cnk[0,k] \In{0} \left( \frac{2\pi}{L}|k|r \right)
-    \exp \left( j \frac{2\pi}{L}kz \right)
+\newcommand{\Bffok}{ \frac{1}{2}
+    \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty
+    \Cnk[0,k] \In{0} \left( \Bc |k|r \right)
+    \exp \left( j \Bc kz \right)
 }
-\newcommand{\Bffno}{
-    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty 
+\newcommand{\Bffno}{ \frac{1}{2}
+    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty
     \Cnk[n,0] r^{|n|}\exp(jn\varphi)
 }
-\newcommand{\Bffnk}{
-    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty 
-    \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty 
-    \Cnk[n,k] j^{-k}\In{|n|} \left( \frac{2\pi}{L}|k|r \right)
-    \exp \left( j \frac{2\pi}{L}kz \right)
+\newcommand{\Bffnk}{ \frac{1}{4}
+    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty
+    \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty
+    \Cnk[n,k] j^{-|n|}\In{|n|} \left( \Bc |k|r \right)
+    \exp \left( j \Bc kz \right)
+    \exp(jn\varphi)
+}
+% BFF Bz Series
+\newcommand{\Bffzok}{ \frac{1}{2}
+    \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty
+    \Cnk[0,k] j\Bc k
+    \In{0} \left( \Bc|k|r \right)
+    \exp \left( j \Bc kz \right)
+}
+
+\newcommand{\Bffznk}{ \frac{1}{4}
+    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty
+    \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty
+    \Cnk[n,k] j^{-|n| + 1} \Bc k
+    \In{|n|} \left( \Bc |k|r \right)
+    \exp \left( j \Bc kz \right)
     \exp(jn\varphi)
 }
 
-\newcommand{\subfigures}[4][0]{
-    \begin{figure}
-        \centering
-        \begin{subfigure}[b]{0.4\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{#1}
-            \caption{#2}
-            \label{fig:#1}
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[b]{0.4\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{#3}
-            \caption{#4}
-            \label{fig:#3}
-        \end{subfigure}
-    \end{figure}
+% BFF Br series
+\newcommand{\Bffrok}{ \frac{1}{2}
+    \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty
+    \Cnk[0,k] \Bc |k|
+    \In{0}' \left( \Bc |k|r \right)
+    \exp \left( j \Bc kz \right)
+}
+
+\newcommand{\Bffrno}{ \frac{1}{2}
+    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty
+    \Cnk[n,0] |n|r^{|n|-1}\exp(jn\varphi)
+}
+
+\newcommand{\Bffrnk}{ \frac{1}{4}
+    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty
+    \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty
+    \Cnk[n,k] \Bc |k|
+    j^{-|n|}\In{|n|}' \left( \Bc |k|r \right)
+    \exp \left( j \Bc kz \right)
+    \exp(jn\varphi)
+}
+
+% BFF Bp series
+
+\newcommand{\Bffpno}{ \frac{1}{2}
+    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty
+    \Cnk[n,0] jnr^{|n|-1}\exp(jn\varphi)
+}
+
+\newcommand{\Bffpnk}{ \frac{1}{4}
+    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty
+    \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty
+    \Cnk[n,k] \frac{n}{r}
+    j^{-|n|+1}\In{|n|} \left( \Bc |k|r \right)
+    \exp \left( j \Bc kz \right)
+    \exp(jn\varphi)
 }

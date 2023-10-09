@@ -92,7 +92,8 @@ Equation \ref{eq:fluxcons} states that the total amount of flux flowing
 through the boundary $\partial\Volume$ of the volume
 $\Volume$ must equal 0.\cite[Ch.4.1.1]{russenschuck_field_2011}
 
-\section{Series decompositions of the magnetic field}
+\section{Series decompositions of the magnetic field} 
+\label{sec:series_decompositions}
 The magnetic field can be calculated in some different ways, for instance
 directly from Maxwells equations or using Biot-Savarts law:
 \begin{equation}
@@ -315,9 +316,9 @@ we can start to eliminate the impossible ones. The domain $\Omega$
 is spanned by the magnetometer and its path along the z axis, making up
 the cylindrical domain. Examples of this domain can be seen in figures
 \ref{fig:aligned_domain} and \ref{fig:unaligned_domain}. Keep in mind
-that the domain is always spanned by and relative to the magnetometer,
-and is thus the same regardless of the magnets relative positioning to
-the PCB.
+that the domain is always spanned by and relative to the magnetometer and
+its path along z, and is thus the same regardless of the magnets
+relative positioning to the PCB.
 \begin{figure}[!h]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
@@ -420,24 +421,66 @@ solenoid magnet.\cite{Acharya2022}
 Now, all the potential solutions can be combined into one double
 series. By also converting the Fourier series from real to complex
 valued double sided series, we can combine the $A_{n,k}$ and $B_{n,k}$
-coefficients into one complex valued coefficient $\Cnk$.
+coefficients into one complex valued coefficient $\Cnk$. The values
+of these coefficients are unknown until fitted to measurements.
 
 After a lot of algebra, this yields
-\begin{equation}
+\begin{equation} \label{eq:Psi}
     \begin{split}
         \Psi(r,\varphi,z) &=\Cnk[0,0]z + \Bffok +\\
         &+ \Bffno +\\ &+ \Bffnk
     \end{split}
 \end{equation}
 
+Technically, summands 1,2 and 4 can be merged into one sum,
+they are however separated to make the distinction of the
+fundamental fourier series in z and the higher order
+harmonics clearer.
+
 It is worth noting that the third summand in the above series
-are a form of commonly used two dimensional multipoles at CERN.
+are a commonly used form of two dimensional multipoles at CERN.
 These are mainly used for dipole, quadropole, sextupole and 
 higher order magnets with no or very little B-field 
 derivative along the z axis inside the aperture.
 \cite[Ch.6.1]{russenschuck_field_2011}
 
-\subsection{Fundamentals and Harmonics of the BFF series.}
+\subsection{Fundamentals and Harmonics of the BFF Series.}
+As stated at the end of section \ref{sec:series_decompositions},
+the $\vb{B}$ field components can be found by taking
+the partial derivatives of our scalar potential in
+equation \ref{eq:Psi}. Since we will in actuality not be
+using an infinite amount of terms for our series, the notation
+$\vb{\hat{B}}$ will be used for our estimated $\vb{B}$ field.
+The $B_z$ component will then be
+\begin{equation}
+    \begin{split}
+        \hat{B}_z &= \frac{\partial \Psi}{\partial z} =
+        \Cnk[0,0] + \Bffzok +\\
+        &+ \Bffznk
+    \end{split}
+\end{equation}
+
+while in $r$ we have
+\begin{equation}
+    \begin{split}
+        \hat{B}_r &= \frac{\partial \Psi}{\partial r} =
+        \Bffrok + \\ &+ \Bffrno \\ &+\Bffrnk
+    \end{split}
+\end{equation}
+
+and finally, in $\varphi$
+\begin{equation}
+    \begin{split}
+        \hat{B}_\varphi &= \frac{1}{r}
+        \frac{\partial \Psi}{\partial \varphi} = \Bffpno +\\
+        &+ \Bffpnk
+    \end{split}
+\end{equation}
+
+We will now study the individual harmonics of the BFF series.
+Using numerical calculations from a simple current loop 
+Biot-Savart model, the BFF series was fitted to $\vb{B}$
+field points inside a cylindrical domain.
 
 
 \newpage

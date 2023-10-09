@@ -1,0 +1,50 @@
+\begin{thebibliography}{1}
+
+\bibitem{Acharya2022}
+B.~Acharya, J.~Alexandre, P.~Benes, B.~Bergmann, S.~Bertolucci, A.~Bevan,
+  H.~Branzas, P.~Burian, M.~Campbell, Y.~M. Cho, M.~de~Montigny, A.~De Roeck,
+  J.~R. Ellis, M.~El Sawy, M.~Fairbairn, D.~Felea, M.~Frank, O.~Gould, J.~Hays,
+  A.~M. Hirt, D.~L.-J. Ho, P.~Q. Hung, J.~Janecek, M.~Kalliokoski, A.~Korzenev,
+  D.~H. Lacarr{\`{e}}re, C.~Leroy, G.~Levi, A.~Lionti, A.~Maulik, A.~Margiotta,
+  N.~Mauri, N.~E. Mavromatos, P.~Mermod, L.~Millward, V.~A. Mitsou,
+  I.~Ostrovskiy, P.-P. Ouimet, J.~Papavassiliou, B.~Parker, L.~Patrizii, G.~E.
+  P{\u{a}}v{\u{a}}la{\c{s}}, J.~L. Pinfold, L.~A. Popa, V.~Popa, M.~Pozzato,
+  S.~Pospisil, A.~Rajantie, R.~Ruiz de~Austri, Z.~Sahnoun, M.~Sakellariadou,
+  A.~Santra, S.~Sarkar, G.~Semenoff, A.~Shaa, G.~Sirri, K.~Sliwa, R.~Soluk,
+  M.~Spurio, M.~Staelens, M.~Suk, M.~Tenti, V.~Togo, J.~A. Tuszyn'ski,
+  A.~Upreti, V.~Vento, and O.~Vives.
+\newblock Search for magnetic monopoles produced via the schwinger mechanism.
+\newblock {\em Nature}, 602(7895):63--67, February 2022.
+
+\bibitem{moon_field_1988}
+Parry~Hiram Moon and D~E Spencer.
+\newblock {\em Field theory handbook}.
+\newblock Springer, Berlin, Germany, 2 edition, May 1988.
+
+\bibitem{russenschuck_field_2011}
+Stephan Russenschuck.
+\newblock {\em Field computation for accelerator magnets: analytical and
+  numerical methods for electromagnetic design and optimization}.
+\newblock John Wiley \& Sons, 2011.
+
+\bibitem{weisstein_bessel}
+Eric~W. Weisstein.
+\newblock Bessel {Function} -- from {Wolfram} {MathWorld}.
+\newblock \url{https://mathworld.wolfram.com/BesselFunction.html}.
+
+\bibitem{weisstein_bessel_first_kind}
+Eric~W. Weisstein.
+\newblock Bessel {Function} of the {First} {Kind} -- from {Wolfram}
+  {MathWorld}.
+
+\bibitem{weisstein_bessel_second_kind}
+Eric~W. Weisstein.
+\newblock Bessel {Function} of the {Second} {Kind} -- from {Wolfram}
+  {MathWorld}.
+
+\bibitem{weisstein_modified}
+Eric~W. Weisstein.
+\newblock Modified {Bessel} {Function} of the {First} {Kind} -- from {Wolfram}
+  {MathWorld}.
+
+\end{thebibliography}
