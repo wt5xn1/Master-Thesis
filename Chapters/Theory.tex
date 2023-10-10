@@ -40,7 +40,7 @@ $\vb{B}$ field obey the easy relations
     \label{eq:BHmap}           \\
     \vb{D} & = \epsilon \vb{E}
 \end{align}
-where $\mu$ is the \emph{magnetic permeability} and $U$ is the
+where $\mu$ is the \emph{magnetic permeability} and $\epsilon$ is the
 \emph{electric permittivity} in the domain of interest.
 Formally, simple cases are where the fields are located in a medium that is
 linear, homogenous across its domain, invariant depending on direction, and
@@ -83,7 +83,7 @@ We then have the following governing laws of electromagnetism for objects at res
     \end{subfigure}
 \end{figure}
 Equation \ref{eq:faraday}, also called faradays law, describes the voltage\
-$\epsilon$ induced in a length of wire $\partial\area$, enclosing an area
+$U$ induced in a length of wire $\partial\area$, enclosing an area
 $\area$, when the magnetic flux $\Phi$ is changing with respect to time.
 The signs of $U$ and $\Phi$ obey the right hand rule as indicated
 in figure \ref{fig:partialA}.
@@ -167,6 +167,13 @@ along the x, y and z axis, in cylindrical coordinates we have
 $\er, \ephi, \ez$ as illustrated in
 figure \ref{fig:cylcoords}. Note that $\er$ and $\ephi$
 change direction depending on the current value of $\varphi$.
+
+The basis vectors are related through the equations
+\begin{align}
+    \er &= \cos(\varphi)\ex + \sin(\varphi)\ey \\
+    \ephi &= -\sin(\varphi)\ex + \cos(\varphi)\ey \\
+    \ez &= \ez
+\end{align}
 
 \subsubsection{Scaling Factors}
 In cylindrical coordinates, scaling factors are needed for
@@ -448,13 +455,11 @@ derivative along the z axis inside the aperture.
 As stated at the end of section \ref{sec:series_decompositions},
 the $\vb{B}$ field components can be found by taking
 the partial derivatives of our scalar potential in
-equation \ref{eq:Psi}. Since we will in actuality not be
-using an infinite amount of terms for our series, the notation
-$\vb{\hat{B}}$ will be used for our estimated $\vb{B}$ field.
+equation \ref{eq:Psi}.
 The $B_z$ component will then be
 \begin{equation}
     \begin{split}
-        \hat{B}_z &= \frac{\partial \Psi}{\partial z} =
+        B_z &= \frac{\partial \Psi}{\partial z} =
         \Cnk[0,0] + \Bffzok +\\
         &+ \Bffznk
     \end{split}
@@ -463,7 +468,7 @@ The $B_z$ component will then be
 while in $r$ we have
 \begin{equation}
     \begin{split}
-        \hat{B}_r &= \frac{\partial \Psi}{\partial r} =
+        B_r &= \frac{\partial \Psi}{\partial r} =
         \Bffrok + \\ &+ \Bffrno \\ &+\Bffrnk
     \end{split}
 \end{equation}
@@ -471,17 +476,155 @@ while in $r$ we have
 and finally, in $\varphi$
 \begin{equation}
     \begin{split}
-        \hat{B}_\varphi &= \frac{1}{r}
+        B_\varphi &= \frac{1}{r}
         \frac{\partial \Psi}{\partial \varphi} = \Bffpno +\\
         &+ \Bffpnk
     \end{split}
 \end{equation}
 
-We will now study the individual harmonics of the BFF series.
+We will now study the individual harmonics in $n$ of the
+BFF series. First, it might be beneficial to give them 
+names for reference. Using the notation $\Psi_{n,k}$
+for the harmonics, we have
+
+\begin{center}
+    \begin{tabular}{c c p{2cm}}
+        $\Psi_{n,k}$ & Summand & Name \\ \hline
+        $\Psi_{0,0}$ & $\Cnk[0,0]z$ & Dipole in $z$ \\
+        $\Psi_{0,k}$ & $\Bffok$ & Solenoid Fundamentals \\
+        $\Psi_{n,0}$ & $\Bffno$ & Multipoles in $r, \varphi$ \\
+        $\Psi_{n,k}$ & $\Bffnk$ & Solenoid Harmonics
+    \end{tabular}
+\end{center}
+
 Using numerical calculations from a simple current loop 
 Biot-Savart model, the BFF series was fitted to $\vb{B}$
-field points inside a cylindrical domain.
+field points inside a cylindrical domain. This way, we
+can easily obtain field maps of the individual harmonics.
+Here, only the first two harmonics $n\in{0,1}$ will be 
+shown.
 
+\subsubsection{Dipole in $z$}
+The most fundamental part of the BFF series, this component
+is a constant field tangential to $\ez$. This component
+only exists for the $B_z$ field. A field map can 
+be seen in the figure below, with the arrows representing
+direction of the field and the color the intensity. Colder
+colors represent lower intensity and warmer colors higher
+intensity.
+
+\begin{figure}[h]
+    \label{fig:zdip}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/zdip.png}
+    \caption{Field map of the dipole in $z$}
+\end{figure}
+
+\subsubsection{Solenoid Fundamentals}
+The solenoid fundamentals describes the most basic solenoid
+field, with no dependence on $\varphi$. The field is
+perfectly symmetrical latitudinally around the $z$ axis.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/solfun.png}
+    \caption{Field map of the solenoid fundamentals}
+    \label{fig:solfun}
+\end{figure}
+
+The solenoid fundamentals along with the dipole in $z$ are
+sufficient to describe an ideal solenoid field. They are
+plotted together in figure \ref{fig:solfundip}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/solfundip.png}
+    \caption{Field map of the solenoid fundamentals + 
+    dipole in $z$.}
+    \label{fig:solfundip}
+\end{figure}
+
+The $z$ dipole can be thought of as the mean of the $Bz$
+component, as illustrated in figure \ref{fig:solfundipplot}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/solfundipplot.png}
+    \caption{$Bz$ field along the z axis.}
+    \label{fig:solfundipplot}
+\end{figure}
+
+\subsubsection{Multipoles in $r, \varphi$}
+As we move away from ideal solenoids to non ideal ones,
+higher order harmonics must be introduced. For instance,
+if the solenoid axis and the $z$ axis in our domain $\Omega$
+are not perfectly parallel, the dipole moment of the solenoid 
+will be decomposed into two to three separate dipoles in
+$r, \varphi$ and $z$ (or $x,y,z$ in cartesian coordinates).
+This phenomena is illustrated in figure \ref{fig:rphidip}
+for $n=1$ (dipole moment in $r, \varphi$) and a
+magnet-domain pitch rotation of 0.3 radians.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/rphidip.png}
+    \caption{Field map of the dipole in $r$, $\varphi$}
+    \label{fig:rphidip}
+\end{figure}
+
+For higher orders of $n$, we will get the quadropoles, sextupoles
+and so on in $r$ and $\varphi$.
+
+\subsubsection{Solenoid Harmonics}
+The solenoid harmonics throws a fourier series in
+$\varphi$ into the mix. We can now represent fields that 
+are varying along the circumference of our cylindrical domain.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/solharm.png}
+    \caption{Field map of the solenoid harmonics.}
+    \label{fig:solharm}
+\end{figure}
+
+Using all of the components together, we can get an accurate
+field description of non ideal solenoid fields, as seen in figure
+\ref{fig:allharmonics}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/allcomponents.png}
+    \caption{Field map of all BFF series components.}
+    \label{fig:allharmonics}
+\end{figure}
+
+Just as with the dipole in $z$, the dipoles in $r,\varphi$
+can be thought of as the mean of $B_r$ and $B_\varphi$
+components.
+This is illustrated in figure \ref{fig:radialplot}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/radialplot.png}
+    \caption{Radial field along the $z$ axis, converted
+    to cartesian coordinates.}
+    \label{fig:radialplot}
+\end{figure}
+
+when a pitch or yaw angle rotation is present between the solenoid and 
+the domain, a "peak shift" between measurements of the $B_z$
+field will be introduced. If the measurements are taken at
+different longitudinal coordinates from the z-axis. An 
+example can be seen in figure \ref{fig:mirrored}. This 
+peak shift is present because of the higher order harmonics
+of the BFF series.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/mirrored.png}
+    \caption{$Bz$ measurements taken at different $y$ coordinates.}
+    \label{fig:mirrored}
+\end{figure}
 
 \newpage
 \section{Signal Processing}
