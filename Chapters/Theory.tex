@@ -10,12 +10,12 @@ particles and domains. These fields can be seen in table \ref{tab:fields}
         \label{tab:fields}
         Field    & SI unit         & Description              \\
         \hline
-        $\vb{H}$ & $1\, Am^{-1} $  & Magnetic Field           \\
-        $\vb{E}$ & $1\, Vm^{-1} $  & Electric Field           \\
-        $\vb{B}$ & $1\, Vsm^{-2} $ & Magnetic Flux Density    \\
-        $\vb{D}$ & $1\, Asm^{-2} $ & Electric Flux Density    \\
-        $\vb{J}$ & $1\, Am^{-2} $  & Electric Current Density \\
-        $\rho$   & $1\, Asm^{-3} $ & Electric Charge Density
+        $\vb{H}$ & $1\, \text{Am}^{-1} $  & Magnetic Field           \\
+        $\vb{E}$ & $1\, \text{Vm}^{-1} $  & Electric Field           \\
+        $\vb{B}$ & $1\, \text{Vsm}^{-2} $ & Magnetic Flux Density    \\
+        $\vb{D}$ & $1\, \text{Asm}^{-2} $ & Electric Flux Density    \\
+        $\vb{J}$ & $1\, \text{Am}^{-2} $  & Electric Current Density \\
+        $\rho$   & $1\, \text{Asm}^{-3} $ & Electric Charge Density
     \end{tabular}
 \end{center}
 These fields are described by Maxwells Equations.
@@ -255,13 +255,13 @@ While the differential equations in $\varPhi$ and $Z$ have a well defined
 set of solutions using elementary functions like sines, cosines and exponentials,
 equation \ref*{eq:diffeqR} is a bit trickier. This equation is known as
 the Bessel differential equation, and solving it will require a
-set of functions known as the Bessel functions.
+set of functions known as the Bessel functions. \cite{weisstein_bessel}
 
 \subsection{Bessel Functions}
 The Bessel functions are defined as the solutions to equation \ref*{eq:diffeqR}.
 They come in several different variants depending on the values of $\alpha_1$ and
-$\alpha_2$. They are not expressible using elementary functions and are therefore
-often approximated using power series solutions, generating functions
+$\alpha_2$. They are not expressible using elementary functions and must therefore
+be approximated using for example, power series solutions, generating functions
 or numeric integration.
 
 The actual calculation of the Bessel functions is outside the scope of this thesis,
@@ -368,12 +368,12 @@ over the length of the domain, we have our first boundary condition
 \end{align}
 where $-(qk)^2 = \alpha_2$ and $L$ is the length of the domain in z.
 
-A Fourier series is then an appropriate solution.
+A Fourier series is a solution.
 \begin{equation}
     Z(z) = \sum\limits_{k=1}^{\infty}
-    A_{zk}\sin{(qkz)} + B_{zk}\cos{(qkz)}
+    \mathfrak{A}_k\sin{(qkz)} + \mathfrak{B}_k\cos{(qkz)}
 \end{equation}
-where $A_{zk}, B_{zk}$ are as of yet unknown coefficients.
+where $\mathfrak{A, B}$ are as of yet unknown coefficients.
 
 Secondly, since $\varPhi(\varphi)$ spans the whole circumference of
 $\Omega$, and the field is continuous inside the domain, we have
@@ -383,10 +383,10 @@ our next boundary condition
     \varPhi(0) = \varPhi(2\pi)
 \end{equation}
 
-Once again, a Fourier series is an appropriate solution
+Once again, a Fourier series is a solution
 \begin{equation}
     \varPhi(\varphi) = \sum\limits_{n=1}^{\infty}
-    A_{\varphi n}\sin{(n\varphi)} + B_{\varphi n}\cos{(n\varphi)}
+    \mathfrak{D}_n\sin{(n\varphi)} + \mathfrak{E}_n\cos{(n\varphi)}
     , \, n\in\mathbb{N}_1
 \end{equation}
 giving us $\alpha_1 = -n^2$.
@@ -395,7 +395,7 @@ With both $\alpha_1$ and $\alpha_2$ found, $R(r)$ in equation \ref{eq:diffeqR}
 is now completely determined as
 \begin{equation}
     R(r) = \sum\limits_{k=0}^{\infty}
-    A_{rk}\Jn{k}(jqkr) + B_{rk}\Yn{k}(jqkr)
+    \mathfrak{F}_{k}\Jn{k}(jqkr) + \mathfrak{G}_k\Yn{k}(jqkr)
 \end{equation}
 Since we know that the magnetic field is not singular inside the aperture
 (Biot Savart, equation \ref{eq:Biot_Savart} gives us singularities only inside
@@ -404,7 +404,7 @@ solution. Since the argument for $\Jn{k}$ is imaginary, we can also substitute
 with the modified Bessel function of the first kind, giving us
 \begin{equation}
     R(r) = \sum\limits_{k=1}^{\infty}
-    j^{-k}A_{rk}\In{k}(qkr)
+    j^{-k}\mathfrak{F}_{k}\In{k}(qkr)
 \end{equation}
 
 We still need to account for the fact that the $\vb{B}$-field might have
@@ -412,12 +412,12 @@ a non zero mean over the domain, i.e. adding the zero terms of the series.
 For $Z(z)$, this is simply
 
 \begin{equation}
-    Z(z) = A_{z0}z
+    Z(z) = \mathfrak{A}_{0,0}z
 \end{equation}
 
 while in $r$ this will be
 \begin{equation}
-    R(r) = \sum\limits_{n=1}^{\infty} A_{r0}r^n
+    R(r) = \sum\limits_{n=1}^{\infty} \mathfrak{F}_{n,0}r^n
 \end{equation}
 \cite[pp.12-14]{moon_field_1988}
 The $n=0$ terms for $R(r)$ and $\varPhi(\varphi)$ have been discarded,
@@ -427,7 +427,8 @@ solenoid magnet.\cite{Acharya2022}
 
 Now, all the potential solutions can be combined into one double
 series. By also converting the Fourier series from real to complex
-valued double sided series, we can combine the $A_{n,k}$ and $B_{n,k}$
+valued double sided series, we can combine the 
+$\mathfrak{A, B, D, E \text{ and } F}$
 coefficients into one complex valued coefficient $\Cnk$. The values
 of these coefficients are unknown until fitted to measurements.
 
@@ -501,7 +502,7 @@ Using numerical calculations from a simple current loop
 Biot-Savart model, the BFF series was fitted to $\vb{B}$
 field points inside a cylindrical domain. This way, we
 can easily obtain field maps of the individual harmonics.
-Here, only the first two harmonics $n\in{0,1}$ will be 
+Here, only the first two harmonics $n\in\{0,1\}$ will be 
 shown.
 
 \subsubsection{Dipole in $z$}
@@ -517,7 +518,7 @@ intensity.
     \label{fig:zdip}
     \centering
     \includegraphics[width=0.8\textwidth]{figs/zdip.png}
-    \caption{Field map of the dipole in $z$}
+    \caption{Field distribution of the dipole in $z$}
 \end{figure}
 
 \subsubsection{Solenoid Fundamentals}
@@ -528,7 +529,7 @@ perfectly symmetrical latitudinally around the $z$ axis.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figs/solfun.png}
-    \caption{Field map of the solenoid fundamentals}
+    \caption{Field distribution of the solenoid fundamentals}
     \label{fig:solfun}
 \end{figure}
 
@@ -539,8 +540,7 @@ plotted together in figure \ref{fig:solfundip}
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figs/solfundip.png}
-    \caption{Field map of the solenoid fundamentals + 
-    dipole in $z$.}
+    \caption{Field map of an ideal solenoid field.}
     \label{fig:solfundip}
 \end{figure}
 
@@ -568,7 +568,7 @@ magnet-domain pitch rotation of 0.3 radians.
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/rphidip.png}
-    \caption{Field map of the dipole in $r$, $\varphi$}
+    \caption{Field distribution of the dipole in $r$, $\varphi$}
     \label{fig:rphidip}
 \end{figure}
 
@@ -583,7 +583,7 @@ are varying along the circumference of our cylindrical domain.
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/solharm.png}
-    \caption{Field map of the solenoid harmonics.}
+    \caption{Field distribution of the solenoid harmonics.}
     \label{fig:solharm}
 \end{figure}
 
