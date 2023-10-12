@@ -611,20 +611,38 @@ This is illustrated in figure \ref{fig:radialplot}.
     \label{fig:radialplot}
 \end{figure}
 
-when a pitch or yaw angle rotation is present between the solenoid and 
+When a pitch or yaw angle rotation is present between the solenoid and 
 the domain, a "peak shift" between measurements of the $B_z$
-field will be introduced. If the measurements are taken at
-different longitudinal coordinates from the z-axis. An 
-example can be seen in figure \ref{fig:mirrored}. This 
-peak shift is present because of the higher order harmonics
-of the BFF series.
+field will be introduced, if the measurements are taken at
+different longitudinal coordinates from the z-axis.
+
+This is because of the higher order harmonics. The $n=0$ fundamentals will
+not see this peak shift, as they are invariant in $\varphi$,
+as seen in figure \ref{fig:harmonicsskew}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/harmonicsskew.png}
+    \caption{Different $B_z$ harmonics and their field distribution at
+    different $y$ offsets for a field from a magnet that is with a tilt
+    relative to the domain.}
+    \label{fig:harmonicsskew}
+\end{figure}
+
+When we add these skewed and non skewed harmonics together, we get the 
+aforementioned peak shift, which can be seen in figure \ref{fig:mirrored}.
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/mirrored.png}
-    \caption{$Bz$ measurements taken at different $y$ coordinates.}
+    \includegraphics[width=0.8\textwidth]{figs/mirrored}
+    \caption{Peak shifts for the $B_z$ field at different longitudinal
+    coordinates, a field from a magnet that is with a tilt
+    relative to the domain. }
     \label{fig:mirrored}
 \end{figure}
+
+To best measure how much a given field deviates from an ideal solenoid,
+any measurement system must be designed such that it can capture the
+higher order harmonics in $n$. 
 
 \newpage
 \section{Signal Processing}
