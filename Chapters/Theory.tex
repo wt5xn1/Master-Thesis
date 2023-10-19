@@ -81,6 +81,7 @@ We then have the following governing laws of electromagnetism for objects at res
         \caption{A volume $\Volume$ and its surface boundary $\partial \Volume$.}
         \label{fig:partialV}
     \end{subfigure}
+    \caption{}
 \end{figure}
 Equation \ref{eq:faraday}, also called faradays law, describes the voltage\
 $U$ induced in a length of wire $\partial\area$, enclosing an area
@@ -240,7 +241,7 @@ such that
 \end{equation}
 where $\alpha_1$ is constant. Using similar reasoning for $Z(z)$
 and then $R(r)$ we can reduce this partial differential equation to
-a system of ordinary differential equations.
+a system of differential equations in one variable.
 \begin{align}
     \frac{d^2R}{dr^2} + \frac{1}{r} \frac{dR}{dr} & =
     \left( \frac{\alpha_1}{r^2} + \alpha_2 \right)R
@@ -273,7 +274,7 @@ functions will aid greatly in finding the solutions to our magnetic scalar poten
 
 The Bessel function of the first kind is a collection of functions that are nonsingular
 at the origin. It is often denoted $\Jn{n}(x)$. Figure \ref*{fig:Jnplot} shows
-$\Jn{n}(x)$ for $n=0,1,2,3,4$.\cite{weisstein_bessel_first_kind}
+$\Jn{n}(x)$ for $n=0,1,2,3,4$.
 
 \begin{figure}[h]
     \centering
@@ -287,6 +288,17 @@ For negative $n$ we have
     \Jn{-n}(x) = (-1)^n \Jn{n}(x)
 \end{equation}
 
+and for the first derivative of $\Jn{n}$ we have
+\begin{equation}
+    \Jn{n}' = \frac{1}{2}\left( \Jn{n-1} -  \Jn{n+1} \right)
+\end{equation}
+
+Another important property is 
+\begin{align}
+    \Jn{0}(0) &= 1 \\
+    \Jn{n}(0) &= 0, \, \forall n\in\mathbb{Z}/\{0\}
+\end{align}
+\cite{weisstein_bessel_first_kind}
 \subsubsection{Modified Bessel Function, First Kind}
 For the bessel function of the first kind with imaginary
 arguments, the modified Bessel function $\In{n}(x)$ is often used.
@@ -395,7 +407,7 @@ With both $\alpha_1$ and $\alpha_2$ found, $R(r)$ in equation \ref{eq:diffeqR}
 is now completely determined as
 \begin{equation}
     R(r) = \sum\limits_{k=0}^{\infty}
-    \mathfrak{F}_{k}\Jn{k}(jqkr) + \mathfrak{G}_k\Yn{k}(jqkr)
+    \mathfrak{F}_{k}\Jn{n}(jqkr) + \mathfrak{G}_k\Yn{n}(jqkr)
 \end{equation}
 Since we know that the magnetic field is not singular inside the aperture
 (Biot Savart, equation \ref{eq:Biot_Savart} gives us singularities only inside
@@ -404,7 +416,7 @@ solution. Since the argument for $\Jn{k}$ is imaginary, we can also substitute
 with the modified Bessel function of the first kind, giving us
 \begin{equation}
     R(r) = \sum\limits_{k=1}^{\infty}
-    j^{-k}\mathfrak{F}_{k}\In{k}(qkr)
+    j^{-k}\mathfrak{F}_{k}\In{n}(qkr)
 \end{equation}
 
 We still need to account for the fact that the $\vb{B}$-field might have
@@ -589,7 +601,8 @@ are varying along the circumference of our cylindrical domain.
 
 Using all of the components together, we can get an accurate
 field description of non ideal solenoid fields, as seen in figure
-\ref{fig:allharmonics}
+\ref{fig:allharmonics} for a domain that is tilted relative to the 
+magnet.
 
 \begin{figure}[!h]
     \centering
@@ -615,7 +628,6 @@ When a pitch or yaw angle rotation is present between the solenoid and
 the domain, a "peak shift" between measurements of the $B_z$
 field will be introduced, if the measurements are taken at
 different longitudinal coordinates from the z-axis.
-
 This is because of the higher order harmonics. The $n=0$ fundamentals will
 not see this peak shift, as they are invariant in $\varphi$,
 as seen in figure \ref{fig:harmonicsskew}
@@ -634,9 +646,9 @@ aforementioned peak shift, which can be seen in figure \ref{fig:mirrored}.
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/mirrored}
-    \caption{Peak shifts for the $B_z$ field at different longitudinal
-    coordinates, a field from a magnet that is with a tilt
-    relative to the domain. }
+    \caption{Peak shifts for the $B_z$ field at opposite longitudinal
+    coordinates, when the magnet has a pitch angle relative
+    to the domain.}
     \label{fig:mirrored}
 \end{figure}
 
