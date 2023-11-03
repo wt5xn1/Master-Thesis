@@ -24,15 +24,15 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.2973261"
-     inkscape:cx="147.98566"
-     inkscape:cy="-206.8436"
+     inkscape:zoom="0.84096521"
+     inkscape:cx="-305.60123"
+     inkscape:cy="639.14654"
      inkscape:window-width="1920"
      inkscape:window-height="1137"
-     inkscape:window-x="1912"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="g7" />
   <defs
      id="defs2">
     <marker
@@ -860,18 +860,22 @@
        id="g7">
       <path
          style="fill:none;stroke:#008080;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#ArrowWide-1)"
-         d="M -114.29516,171.66768 V 144.61675"
-         id="path16-1" />
+         d="m -114.29516,171.66768 0.0674,-19.09544"
+         id="path16-1"
+         sodipodi:nodetypes="cc" />
       <path
          style="fill:none;stroke:#008080;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#ArrowWide-1-6)"
-         d="m -114.22723,172.03492 -19.16121,19.09452"
-         id="path16-1-3" />
+         d="m -114.22723,172.03492 -11.52675,11.46928"
+         id="path16-1-3"
+         sodipodi:nodetypes="cc" />
       <path
          style="fill:none;stroke:#008080;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#ArrowWide-1-7)"
-         d="m -114.18457,171.81166 h 27.05094"
-         id="path16-1-0" />
+         d="m -114.18457,171.81166 23.819093,0"
+         id="path16-1-0"
+         sodipodi:nodetypes="cc" />
       <g
-         id="g4">
+         id="g4"
+         transform="translate(0.67339726,15.351129)">
         <g
            fill="#000000"
            fill-opacity="1"
@@ -906,7 +910,8 @@
         </g>
       </g>
       <g
-         id="g6">
+         id="g6"
+         transform="translate(-6.325389,-21.076201)">
         <g
            id="g3">
           <g
@@ -944,7 +949,8 @@
         </g>
       </g>
       <g
-         id="g5">
+         id="g5"
+         transform="translate(0.01679392,-0.15730936)">
         <g
            fill="#000000"
            fill-opacity="1"
