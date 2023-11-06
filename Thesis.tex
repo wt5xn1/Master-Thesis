@@ -65,6 +65,9 @@
 \setlength{\parindent}{0pt}
 \usepackage{parskip}
 
+\usepackage{biblatex}
+\addbibresource{References.bib}
+
 % Subfigures
 \usepackage{caption}
 \usepackage{subcaption, wrapfig, graphicx}
@@ -145,8 +148,6 @@ this system is presented, along with some post processing methods.
 \input{Chapters/measurements.tex}
 \input{Chapters/post_processing.tex}
 \input{Chapters/discussion.tex}
-\printglossary[type=main]
-\printglossary[type=unit]
 \clearpage
 
 
@@ -155,7 +156,10 @@ this system is presented, along with some post processing methods.
 % No restriction is set to the reference styles
 % Save your references in References.bib
 \nocite{*} % Remove this for your own citations
-\bibliographystyle{plain}
-\bibliography{References}
+\printglossary[type=main]
+\printglossary[type=unit]
+%\bibliographystyle{plain}
+%\bibliography{References}
+\printbibliography
 
 \end{document}
