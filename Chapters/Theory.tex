@@ -1,6 +1,4 @@
-\chapter{Background}
-
-\section{Electromagnetic Fields}
+\chapter{Electromagnetic Fields}
 The electromagnetic fields are a collection of closely linked fields.
 These fields govern the electric and magnetic interactions of charged
 particles and domains. These fields can be seen in table \ref{tab:fields}
@@ -153,18 +151,19 @@ system $(x, y, z)$ through the relations:
     \end{split}
 \end{align}
 
-\begin{wrapfigure}{r}{0.5\textwidth}
-    \includegraphics[width=0.5\textwidth]{figs/cylcoords}
-    \caption{Cylindrical coordinates and their relationship to cartesian coordinates.}
-    \label{fig:cylcoords}
-\end{wrapfigure}
-
 A vector $\vb{v}$ is defined by its distance $r$ from the origin, its
 angle $\varphi$ from the $x$-axis, and its offset in $z$ as
 $\vb{v}(r, \varphi, z)  = (r\cos \varphi, r\sin \varphi, z)$.
 Where in cartesian coordinates we have
 the basis vectors $\ex, \ey, \ez$
 along the x, y and z axis, in cylindrical coordinates we have
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+    \includegraphics[width=0.5\textwidth]{figs/cylcoords}
+    \caption{Cylindrical coordinates and their relationship to cartesian coordinates.}
+    \label{fig:cylcoords}
+\end{wrapfigure}
+
 $\er, \ephi, \ez$ as illustrated in
 figure \ref{fig:cylcoords}. Note that $\er$ and $\ephi$
 change direction depending on the current value of $\varphi$.
@@ -655,7 +654,5 @@ To best measure how much a given field deviates from an ideal solenoid,
 any measurement system must be designed such that it can capture the
 higher order harmonics in $n$. 
 
-\newpage
-\section{Signal Processing}
-\subsection{Filters}
-\subsection{Least Squares Fitting}
+\FloatBarrier
+\subsection{Dipole Components and the integrated field}
