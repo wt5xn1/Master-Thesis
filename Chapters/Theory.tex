@@ -3,19 +3,22 @@ The electromagnetic fields are a collection of closely linked fields.
 These fields govern the electric and magnetic interactions of charged
 particles and domains. These fields can be seen in table \ref{tab:fields}
 
-\begin{center}
-    \begin{tabular}{c c c}
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{c c c}
+            Field    & SI unit                & Description              \\
+            \hline
+            $\vb{H}$ & $1\, \text{Am}^{-1} $  & Magnetic Field           \\
+            $\vb{E}$ & $1\, \text{Vm}^{-1} $  & Electric Field           \\
+            $\vb{B}$ & $1\, \text{Vsm}^{-2} $ & Magnetic Flux Density    \\
+            $\vb{D}$ & $1\, \text{Asm}^{-2} $ & Electric Flux Density    \\
+            $\vb{J}$ & $1\, \text{Am}^{-2} $  & Electric Current Density \\
+            $\rho$   & $1\, \text{Asm}^{-3} $ & Electric Charge Density
+        \end{tabular}
+        \caption{Electromagnetic Field Quantities}
         \label{tab:fields}
-        Field    & SI unit         & Description              \\
-        \hline
-        $\vb{H}$ & $1\, \text{Am}^{-1} $  & Magnetic Field           \\
-        $\vb{E}$ & $1\, \text{Vm}^{-1} $  & Electric Field           \\
-        $\vb{B}$ & $1\, \text{Vsm}^{-2} $ & Magnetic Flux Density    \\
-        $\vb{D}$ & $1\, \text{Asm}^{-2} $ & Electric Flux Density    \\
-        $\vb{J}$ & $1\, \text{Am}^{-2} $  & Electric Current Density \\
-        $\rho$   & $1\, \text{Asm}^{-3} $ & Electric Charge Density
-    \end{tabular}
-\end{center}
+    \end{center}
+\end{table}
 These fields are described by Maxwells Equations.
 In differential form for the stationary case, these are as follows:
 
@@ -91,7 +94,7 @@ Equation \ref{eq:fluxcons} states that the total amount of flux flowing
 through the boundary $\partial\Volume$ of a volume
 $\Volume$ must equal 0.\cite[Ch.4.1.1]{russenschuck_field_2011}
 
-\section{Series decompositions of the magnetic field} 
+\section{Series decompositions of the magnetic field}
 \label{sec:series_decompositions}
 The magnetic field can be calculated in some different ways, for instance
 directly from Maxwells equations or using Biot-Savarts law:
@@ -170,9 +173,9 @@ change direction depending on the current value of $\varphi$.
 
 The basis vectors are related through the equations
 \begin{align}
-    \er &= \cos(\varphi)\ex + \sin(\varphi)\ey \\
-    \ephi &= -\sin(\varphi)\ex + \cos(\varphi)\ey \\
-    \ez &= \ez
+    \er   & = \cos(\varphi)\ex + \sin(\varphi)\ey  \\
+    \ephi & = -\sin(\varphi)\ex + \cos(\varphi)\ey \\
+    \ez   & = \ez
 \end{align}
 
 \subsubsection{Scaling Factors}
@@ -292,10 +295,10 @@ and for the first derivative of $\Jn{n}$ we have
     \Jn{n}' = \frac{1}{2}\left( \Jn{n-1} -  \Jn{n+1} \right)
 \end{equation}
 
-Another important property is 
+Another important property is
 \begin{align}
-    \Jn{0}(0) &= 1 \\
-    \Jn{n}(0) &= 0, \, \forall n\in\mathbb{Z}/\{0\}
+    \Jn{0}(0) & = 1                                  \\
+    \Jn{n}(0) & = 0, \, \forall n\in\mathbb{Z}/\{0\}
 \end{align}
 \cite{weisstein_bessel_first_kind}
 \subsubsection{Modified Bessel Function, First Kind}
@@ -438,10 +441,11 @@ solenoid magnet.\cite{Acharya2022}
 
 Now, all the potential solutions can be combined into one double
 series. By also converting the Fourier series from real to complex
-valued double sided series, we can combine the 
+valued double sided series, we can combine the
 $\mathfrak{A, B, D, E \text{ and } F}$
 coefficients into one complex valued coefficient $\Cnk$. The values
-of these coefficients are unknown until fitted to measurements.
+of these coefficients are unknown until fitted to measurements or 
+calculated. For known coefficients, instead $C_{n,k}$ will be used.
 
 After a lot of algebra, this yields
 \begin{equation} \label{eq:Psi}
@@ -458,8 +462,8 @@ harmonics clearer.
 
 It is worth noting that the third summand in the above series
 are a commonly used form of two dimensional multipoles at CERN.
-These are mainly used for dipole, quadropole, sextupole and 
-higher order magnets with no or very little B-field 
+These are mainly used for dipole, quadropole, sextupole and
+higher order magnets with no or very little B-field
 derivative along the z axis inside the aperture.
 \cite[Ch.6.1]{russenschuck_field_2011}
 
@@ -495,31 +499,34 @@ and finally, in $\varphi$
 \end{equation}
 
 We will now study the individual harmonics in $n$ of the
-BFF series. First, it might be beneficial to give them 
+BFF series. First, it might be beneficial to give them
 names for reference. Using the notation $\Psi_{n,k}$
 for the harmonics, we have
 
-\begin{center}
+\begin{table}[!h]
+    \centering
     \begin{tabular}{c c p{2cm}}
-        $\Psi_{n,k}$ & Summand & Name \\ \hline
-        $\Psi_{0,0}$ & $\Cnk[0,0]z$ & Dipole in $z$ \\
-        $\Psi_{0,k}$ & $\Bffok$ & Solenoid Fundamentals \\
-        $\Psi_{n,0}$ & $\Bffno$ & Multipoles in $r, \varphi$ \\
-        $\Psi_{n,k}$ & $\Bffnk$ & Solenoid Harmonics
+        $\Psi_{n,k}$ & Summand      & Name                       \\ \hline
+        $\Psi_{0,0}$ & $\Cnk[0,0]z$ & Dipole in $z$              \\
+        $\Psi_{0,k}$ & $\Bffok$     & Solenoid Fundamentals      \\
+        $\Psi_{n,0}$ & $\Bffno$     & Multipoles in $r, \varphi$ \\
+        $\Psi_{n,k}$ & $\Bffnk$     & Solenoid Harmonics
     \end{tabular}
-\end{center}
+    \caption{Components of the Bessel-Fourier-Fourier Series.}
+    \label{tab:BFF-components}
+\end{table}
 
-Using numerical calculations from a simple current loop 
+Using numerical calculations from a simple current loop
 Biot-Savart model, the BFF series was fitted to $\vb{B}$
 field points inside a cylindrical domain. This way, we
 can easily obtain field maps of the individual harmonics.
-Here, only the first two harmonics $n\in\{0,1\}$ will be 
+Here, only the first two harmonics $n\in\{0,1\}$ will be
 shown.
 
 \subsubsection{Dipole in $z$}
 The most fundamental part of the BFF series, this component
 is a constant field tangential to $\ez$. This component
-only exists for the $B_z$ field. A field map can 
+only exists for the $B_z$ field. A field map can
 be seen in the figure below, with the arrows representing
 direction of the field and the color the intensity. Colder
 colors represent lower intensity and warmer colors higher
@@ -569,7 +576,7 @@ component, as illustrated in figure \ref{fig:solfundipplot}.
 As we move away from ideal solenoids to non ideal ones,
 higher order harmonics must be introduced. For instance,
 if the solenoid axis and the $z$ axis in our domain $\Omega$
-are not perfectly parallel, the dipole moment of the solenoid 
+are not perfectly parallel, the dipole moment of the solenoid
 will be decomposed into two to three separate dipoles in
 $r, \varphi$ and $z$ (or $x,y,z$ in cartesian coordinates).
 This phenomena is illustrated in figure \ref{fig:rphidip}
@@ -588,7 +595,7 @@ and so on in $r$ and $\varphi$.
 
 \subsubsection{Solenoid Harmonics}
 The solenoid harmonics throws a fourier series in
-$\varphi$ into the mix. We can now represent fields that 
+$\varphi$ into the mix. We can now represent fields that
 are varying along the circumference of our cylindrical domain.
 
 \begin{figure}[!h]
@@ -600,7 +607,7 @@ are varying along the circumference of our cylindrical domain.
 
 Using all of the components together, we can get an accurate
 field description of non ideal solenoid fields, as seen in figure
-\ref{fig:allharmonics} for a domain that is tilted relative to the 
+\ref{fig:allharmonics} for a domain that is tilted relative to the
 magnet.
 
 \begin{figure}[!h]
@@ -619,11 +626,11 @@ This is illustrated in figure \ref{fig:radialplot}.
     \centering
     \includegraphics[width=0.8\textwidth]{figs/radialplot.png}
     \caption{Radial field along the $z$ axis, converted
-    to cartesian coordinates.}
+        to cartesian coordinates.}
     \label{fig:radialplot}
 \end{figure}
 
-When a pitch or yaw angle rotation is present between the solenoid and 
+When a pitch or yaw angle rotation is present between the solenoid and
 the domain, a "peak shift" between measurements of the $B_z$
 field will be introduced, if the measurements are taken at
 different longitudinal coordinates from the z-axis.
@@ -634,25 +641,82 @@ as seen in figure \ref{fig:harmonicsskew}
     \centering
     \includegraphics[width=0.8\textwidth]{figs/harmonicsskew.png}
     \caption{Different $B_z$ harmonics and their field distribution at
-    different $y$ offsets for a tilted magnet.}
+        different $y$ offsets for a tilted magnet.}
     \label{fig:harmonicsskew}
 \end{figure}
 
-When we add these skewed and non skewed harmonics together, we get the 
+When we add these skewed and non skewed harmonics together, we get the
 aforementioned peak shift, which can be seen in figure \ref{fig:mirrored}.
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/mirrored}
     \caption{Peak shifts for the $B_z$ field at opposite longitudinal
-    coordinates, when the magnet has a pitch angle relative
-    to the domain.}
+        coordinates, when the magnet has a pitch angle relative
+        to the domain.}
     \label{fig:mirrored}
 \end{figure}
 
 To best measure how much a given field deviates from an ideal solenoid,
 any measurement system must be designed such that it can capture the
-higher order harmonics in $n$. 
+higher order harmonics in $n$.
 
 \FloatBarrier
-\subsection{Dipole Components and the integrated field}
+\subsection{Dipole Components and the Integrated Field}
+By using Stokes theorem on equation \ref{eq:maxwell2}, one gets Amperes Law
+in integral form,
+\begin{equation}
+    \oint \limits_C \vb{B} \cdot d\vb{l} =
+    \mu_0 \iint\limits_S \vb{J}\cdot d\vb{S} = \mu_0 NI
+    \label{eq:amperelaw}
+\end{equation}
+where the surface integral of the current density has been replaced
+as the number of turns $N$ times the enclosed current $I$. $S$ is a surface enclosing
+the current density $\vb{J}$ and $C$ is the boundary of $S$. $\vb{l}$
+is parametrized line describing C.
+Now consider figure \ref{fig:ampereloop}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/ampereloop}
+    \caption{An amperian loop in a simple current loop.}
+    \label{fig:ampereloop}
+\end{figure}
+
+A curve $\vb{l} = \vb{l_1} + \vb{l_2} + \vb{l_3} + \vb{l_4}$ encloses
+one end of a simple current loop. The axis of the current loop
+has some angle $-\pi < \theta < \pi$ relative to the coordinate system.
+If $l_1$ is sufficiently long, such that it's ends are far out in
+the zero field, then the field at the remaining lines $\vb{l}_{2,3,4}$ will also be
+very close to zero. A good approximation of equation \ref{eq:amperelaw} is
+then
+
+\begin{equation}
+    \int \limits_{\vb{l_1}} \vb{B}\cdot d\vb{l_1} \approx \mu_0 NI.
+    \label{eq:amperian-line}
+\end{equation}
+
+Let $\vb{B}$ be described by the Bessel-Fourier-Fourier series $\Psi$,
+with $\vb{l}_1$ spanning the length of the domain. Since $\Psi$ is
+periodic in the length of the domain, all higher order components will
+vanish in the integral and \ref{eq:amperian-line} becomes
+
+\begin{equation}
+    \int \limits_{\vb{l_1}} \frac{\partial\Psi}{\partial z} d\vb{l_1}
+    = \int \limits_{-L/2}^{L/2} C_{0,0} dz = C_{0,0} L \approx
+    \mu_0 N I.
+\end{equation}
+
+Thus, we have for the BFF series
+
+\begin{equation}
+    C_{0,0} \approx \mu_0 \frac{NI}{L}
+\end{equation}
+Where L is the length of the domain. This expression becomes
+more accurate the longer L is, as the domain stretches further
+into the zero field. Note that the value
+of the integrated field term $C_{0,0}$ does not depend on $\theta$,
+but solely on the current and amount of turns in the solenoid
+surrounding the domain. The dipoles in $r$ and $\varphi$ do
+depend on the angle $\theta$. This relationship can not easily
+be found algebraically, and will be studied more in chapter \ref{ch:xydipoles}.

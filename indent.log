@@ -1,7 +1,7 @@
 INFO:  latexindent.pl version 3.22.2, 2023-07-14, a script to indent .tex files
        latexindent.pl lives here: C:/Users/vmattsso/AppData/Local/Programs/MiKTeX/scripts/latexindent/
-       Mon Nov 20 15:46:38 2023
-       Filename: c:/Users/vmattsso/cernbox/Documents/Presentations/Report - Master Thesis/Chapters/__latexindent_temp_coil-magnetometer.tex
+       Tue Nov 21 12:44:06 2023
+       Filename: c:/Users/vmattsso/cernbox/Documents/Presentations/Report - Master Thesis/Chapters/__latexindent_temp_Theory.tex
 INFO:  Processing switches:
        -y|--yaml: YAML settings specified via command line
        -c|--cruft: cruft directory
