@@ -635,7 +635,7 @@ the domain, a "peak shift" between measurements of the $B_z$
 field will be introduced, if the measurements are taken at
 different longitudinal coordinates from the z-axis.
 This is because of the higher order harmonics. The $n=0$ fundamentals will
-not see this peak shift, as they are invariant in $\varphi$,
+not see this peak shift. They are invariant in $\varphi$,
 as seen in figure \ref{fig:harmonicsskew}
 \begin{figure}[!h]
     \centering
@@ -670,8 +670,8 @@ in integral form,
     \mu_0 \iint\limits_S \vb{J}\cdot d\vb{S} = \mu_0 NI
     \label{eq:amperelaw}
 \end{equation}
-where the surface integral of the current density has been replaced
-as the number of turns $N$ times the enclosed current $I$. $S$ is a surface enclosing
+where the surface integral of the current density can be replaced
+with the number of turns $N$ times the enclosed current $I$. $S$ is a surface enclosing
 the current density $\vb{J}$ and $C$ is the boundary of $S$. $\vb{l}$
 is parametrized line describing C.
 Now consider figure \ref{fig:ampereloop}.
@@ -705,6 +705,7 @@ vanish in the integral and \ref{eq:amperian-line} becomes
     \int \limits_{\vb{l_1}} \frac{\partial\Psi}{\partial z} d\vb{l_1}
     = \int \limits_{-L/2}^{L/2} C_{0,0} dz = C_{0,0} L \approx
     \mu_0 N I.
+    \label{eq:Czz}
 \end{equation}
 
 Thus, we have for the BFF series
@@ -717,6 +718,49 @@ more accurate the longer L is, as the domain stretches further
 into the zero field. Note that the value
 of the integrated field term $C_{0,0}$ does not depend on $\theta$,
 but solely on the current and amount of turns in the solenoid
-surrounding the domain. The dipoles in $r$ and $\varphi$ do
+surrounding the domain.
+
+The dipoles in $r$ and $\varphi$ do
 depend on the angle $\theta$. This relationship can not easily
-be found algebraically, and will be studied more in chapter \ref{ch:xydipoles}.
+be found algebraically, and has instead been investigated through CAD simulations
+and numerical integration of simple current loops. A study was set up like in figure
+\ref{fig:ampereloop}, with $\theta$ as a parameter. The numerical integral of
+both $B_z$ and $B_y$ were taken along $\vb{l_1}$. In the CAD simulations, the solenoid
+parameters radius, length and width were varied. In both the CAD simulations
+and numerical integrations, the $x$ and $y$ offset of $\vb{l_1}$ was randomly varied
+between simulation passes, making sure that the $x, y$ offsets were small enough
+for $l_1$ to pass through the solenoid.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\linewidth]{figs/dipoleplot}
+    \caption{}
+    \label{fig:dipoleplot}
+\end{figure}
+
+Regardless of all of the variations between simulation passes, the results were
+exactly alike down to floating point precision in the numerical integration
+simulations, and down to discretization precision errors in the CAD simulations.
+The simulations suggest that when a solenoid is tilted with an angle $\theta$
+around the x axis, the integral of $B_y$ along $\vb{l_1}$ becomes
+
+\begin{equation}
+    \int\limits_{\vb{l_1}}B_y d\vb{l_1} =
+    \tan\left( \frac{\theta}{2} \right)  \int\limits_{\vb{l_1}}B_z d\vb{l_1}
+    \approx \tan\left( \frac{\theta}{2} \right) NI
+\end{equation}
+
+as can be seen in the simulation results in figure \ref{fig:dipoleplot}.
+Furthermore, the value of the $By$ integral along $\vb{l_1}$
+is invariant to the $x,y$ location of $\vb{l_1}$ inside the solenoid.
+This suggests that no higher order multipoles than the dipoles are
+created when the solenoid is tilted. Using similar reasoning as 
+in equation \ref{eq:Czz}, the following can be said about the 
+dipole components in $r, \varphi$
+
+\begin{align}
+    |C_{1,0} + C_{-1,0}| &\approx \tan\left( \frac{\theta}{2} \right) \frac{NI}{L} \\
+    \arg(C_{1,0} + C_{-1,0}) &= \alpha + \frac{\pi}{2}
+\end{align}
+where $\alpha$ is the angular offset from the $x$ axis to the rotation
+axis of the solenoid.

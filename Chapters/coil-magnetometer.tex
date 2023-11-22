@@ -2,9 +2,6 @@
 The magnetometer consists of several components. A PCB with
 printed flux pickup coils, fast digital integrators, a rotary
 encoder and a laser tracker system for geometric positioning measurements.
-Strictly, the laser tracker is not required, as the encoder can be used
-for positioning. Still, it was used to increase
-the geometrical accuracy.
 
 \begin{figure}[!h]
     \centering
@@ -121,7 +118,7 @@ equation \ref{eq:deltaPhi}.
 \begin{equation}
     \Delta \Phi_i =
     \int \limits_{t_{i-1}}^{t_i} \frac{d}{dt}\Phi dt
-    = \Phi_{z_{i-1}} - \Phi_{z_{i}} = \Delta \Phi(z_i)
+    = \Phi_{z_{i-1}} - \Phi_{z_{i}} = \Delta \Phi[z_i]
     \label{eq:deltaPhi}
 \end{equation}
 
@@ -130,7 +127,7 @@ by taking the cumulative sum of the delta fluxes, as in equation
 \ref{eq:Phiz}.
 
 \begin{equation}
-    \Phi(z_i) = \sum \limits_{k=0}^i \Delta \Phi(z_i)
+    \Phi[z_i] = \sum \limits_{k=0}^i \Delta \Phi[z_i]
     \label{eq:Phiz}
 \end{equation}
 
@@ -192,7 +189,7 @@ had fixed coordinate frame in relation to the network points.
         \coordinate [below of=FDI, yshift=1.5cm] (bFDI);
 
         \draw [->] (coils) -- node[anchor=south]{Voltages}(FDI);
-        \draw [->] (FDI) -| node[anchor=south]{Delta Fluxes} (output);
+        \draw [->] (FDI) -| node[anchor=south]{$\Delta$ Fluxes} (output);
         \draw [->] (encoder) -- (triggers);
         \draw [->] (triggers) -- (leica);
         \draw [->] (triggers) |- (bFDI) -- (FDI);
