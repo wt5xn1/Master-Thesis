@@ -1,5 +1,5 @@
 \chapter{The Translating Coil Fluxmeter}
-The magnetometer consists of several components. A PCB with
+The fluxmeter consists of several components. A PCB with
 printed flux pickup coils, fast digital integrators, a rotary
 encoder and a laser tracker system for geometric positioning measurements.
 
@@ -51,7 +51,26 @@ to Faradays Law, equation \ref{eq:faraday}. Although the field is
 static, since the fluxmeter is moving it will still see a delta
 flux with respect to time.
 
-\section{Geometric Laser Measurements}
+\section{The Measurement Assembly}
+A picture of the magnet with the guiding tube and tube clamps can be seen in
+figure \ref{fig:magnetassembly}. In figure \ref{fig:leica}, the laser tracker
+can be seen, locked onto the target on the fluxmeter pcb.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/magnet-assembly}
+    \caption{Guiding tube in the magnet. Tube clambs marked in green rectangles.}
+    \label{fig:magnetassembly}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/leica}
+    \caption{Laser tracker, looking into the guiding tube.}
+    \label{fig:leica}
+\end{figure}
+
+\section{Geometric Measurements}
 The laser tracker works by shooting a laser at a reflector, and then
 measuring the time of flight. The accuracy depends on the reflector
 type and measurement time, but an upper limit of
@@ -67,6 +86,11 @@ taken of the magnet itself. These points
 were then fitted to a cylinder. Using a 3D model of the
 solenoid, a coordinate system could be constructed
 with its origin at the geometric center of the magnet.
+The $z$ axis was chosen as the solenoidal axis, pointing
+in the field direction. $y$ was chosen as the axis
+pointing up, opposite to gravity, leaving $x$ as 
+the axis parallel to the ground.
+
 Furthermore, two planes were constructed at the positions
 of the clamps holding the fluxmeter guiding tube. The
 positions of these clamps could accurately be moved in
@@ -142,25 +166,6 @@ each encoder trigger, the measurements are repeatable to a high accuracy.
 Furthermore, the integration operation of the FDI:s act as a
 low pass filter, removing high frequency noise in the voltage
 signals.
-
-\section{The Measurement Assembly}
-A picture of the magnet with the guiding tube and tube clamps can be seen in
-figure \ref{fig:magnetassembly}. In figure \ref{fig:leica}, the laser tracker
-can be seen, locked onto the target on the fluxmeter pcb.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figs/magnet-assembly}
-    \caption{Guiding tube in the magnet. Tube clambs marked in green rectangles.}
-    \label{fig:magnetassembly}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figs/leica}
-    \caption{Laser tracker, looking into the guiding tube.}
-    \label{fig:leica}
-\end{figure}
 
 As seen in figure \ref{fig:measurement-assembly}, the encoder triggers
 both the FDI:s and the laser tracker, giving accurate positions coupled
