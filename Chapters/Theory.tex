@@ -373,7 +373,7 @@ Using a table of known solutions to equations
 \end{align*}
 
 Firstly, the measurements start and end far outside of the magnet,
-where the field is very close to zero. Thus, the sum of the solutions
+where the field is negligibly close to zero. Thus, the sum of the solutions
 in $z$ must start and end at zero. Since the solutions must be periodic
 over the length of the domain, we have our first boundary condition
 \begin{align}
@@ -413,8 +413,8 @@ is now completely determined as
 \end{equation}
 Since we know that the magnetic field is not singular inside the aperture
 (Biot Savart, equation \ref{eq:Biot_Savart} gives us singularities only inside
-the current carrying wires.) we can immediately discard $\Yn{k}$ as potential
-solution. Since the argument for $\Jn{k}$ is imaginary, we can also substitute
+the current carrying wires.) we can immediately discard $\Yn{n}$ as potential
+solution. Since the argument for $\Jn{n}$ is imaginary, we can also substitute
 with the modified Bessel function of the first kind, giving us
 \begin{equation}
     R(r) = \sum\limits_{k=1}^{\infty}
@@ -519,7 +519,7 @@ for the harmonics, we have
 Using numerical calculations from a simple current loop
 Biot-Savart model, the BFF series was fitted to $\vb{B}$
 field points inside a cylindrical domain. This way, we
-can easily obtain field maps of the individual harmonics.
+can easily obtain field distributions of the individual harmonics.
 Here, only the first two harmonics $n\in\{0,1\}$ will be
 shown.
 
@@ -594,6 +594,7 @@ For higher orders of $n$, we will get the quadropoles, sextupoles
 and so on in $r$ and $\varphi$.
 
 \subsubsection{Solenoid Harmonics}
+\label{subsubsection:solenoid-harmonics}
 The solenoid harmonics throws a fourier series in
 $\varphi$ into the mix. We can now represent fields that
 are varying along the circumference of our cylindrical domain.
@@ -673,7 +674,7 @@ in integral form,
 where the surface integral of the current density can be replaced
 with the number of turns $N$ times the enclosed current $I$. $S$ is a surface enclosing
 the current density $\vb{J}$ and $C$ is the boundary of $S$. $\vb{l}$
-is parametrized line describing C.
+is parametrized curve describing C.
 Now consider figure \ref{fig:ampereloop}.
 
 \begin{figure}[!h]
@@ -683,13 +684,16 @@ Now consider figure \ref{fig:ampereloop}.
     \label{fig:ampereloop}
 \end{figure}
 
-A curve $\vb{l} = \vb{l_1} + \vb{l_2} + \vb{l_3} + \vb{l_4}$ encloses
+Let $\vb{l}$ be the the concatenation of the curves
+$\vb{l}_1,\vb{l}_2,\vb{l}_3,\vb{l}_4 $, whose images are straight
+lines, and encloses
 one end of a simple current loop. The axis of the current loop
 has some angle $-\pi < \theta < \pi$ relative to the coordinate system.
-If $l_1$ is sufficiently long, such that it's ends are far out in
-the zero field, then the field at the remaining lines $\vb{l}_{2,3,4}$ will also be
-very close to zero. A good approximation of equation \ref{eq:amperelaw} is
-then
+If $\vb{l}_1$ and $\vb{l}_{2,4}$ are sufficiently long, such that their
+ends are far out in the zero field, then the field at
+the remaining lines $\vb{l}_{2,3,4}$ will also be
+very close to zero. A good approximation of equation \ref{eq:amperelaw}
+is then
 
 \begin{equation}
     \int \limits_{\vb{l_1}} \vb{B}\cdot d\vb{l_1} \approx \mu_0 NI.
@@ -740,7 +744,7 @@ for $l_1$ to pass through the solenoid.
 
 Regardless of all of the variations between simulation passes, the results were
 exactly alike down to floating point precision in the numerical integration
-simulations, and down to discretization precision errors in the CAD simulations.
+simulations, and down to discretization errors in the CAD simulations.
 The simulations suggest that when a solenoid is tilted with an angle $\theta$
 around the x axis, the integral of $B_y$ along $\vb{l_1}$ becomes
 
