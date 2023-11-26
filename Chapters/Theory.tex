@@ -118,9 +118,9 @@ meaning we have a constant electric field. Equation \ref{eq:maxwell1}
 can then be rewritten as follows:
 \begin{align}
     \begin{split}
-        \nabla \times \vb{H} &= \mu_0\nabla \times \vb{B}\\
-        \mu_0\nabla \times \vb{B}
-        &=\vb{J} + \frac{\partial}{\partial t}\vb{D}
+        \mu_0\nabla \times \vb{H} &= \nabla \times \vb{B}\\
+        \nabla \times \vb{B}
+        &=\mu_0 \left( \vb{J} + \frac{\partial}{\partial t}\vb{D} \right)
         \Bigg\vert_{\substack{\vb{J}=\vb{0} \\
                 \frac{\partial}{\partial t}\vb{D}=\vb{0}}} \\
         &= \vb{0}
@@ -137,9 +137,9 @@ Laplace's equation
 \end{equation}
 inside the domain, where the $\vb{B}$ field components are
 \begin{equation}
-    B_x = \frac{\partial \Psi}{\partial x}, \,
-    B_y = \frac{\partial \Psi}{\partial y}, \,
-    B_z = \frac{\partial \Psi}{\partial z}
+    B_x = \mu_0\frac{\partial \Psi}{\partial x}, \,
+    B_y = \mu_0\frac{\partial \Psi}{\partial y}, \,
+    B_z = \mu_0\frac{\partial \Psi}{\partial z}
 \end{equation}
 \subsection{Cylindrical Coordinates}
 Since the aperture of our magnet is cylindrical, working in cylindrical
@@ -156,17 +156,17 @@ system $(x, y, z)$ through the relations:
 
 A vector $\vb{v}$ is defined by its distance $r$ from the origin, its
 angle $\varphi$ from the $x$-axis, and its offset in $z$ as
-$\vb{v}(r, \varphi, z)  = (r\cos \varphi, r\sin \varphi, z)$.
-Where in cartesian coordinates we have
-the basis vectors $\ex, \ey, \ez$
-along the x, y and z axis, in cylindrical coordinates we have
-
+$\vb{v}(r, \varphi, z) = (r\cos \varphi, r\sin \varphi, z)$.
+\newline
 \begin{wrapfigure}{r}{0.5\textwidth}
     \includegraphics[width=0.5\textwidth]{figs/cylcoords}
     \caption{Cylindrical coordinates and their relationship to cartesian coordinates.}
     \label{fig:cylcoords}
 \end{wrapfigure}
 
+Where in cartesian coordinates we have
+the basis vectors $\ex, \ey, \ez$
+along the x, y and z axis, in cylindrical coordinates we have
 $\er, \ephi, \ez$ as illustrated in
 figure \ref{fig:cylcoords}. Note that $\er$ and $\ephi$
 change direction depending on the current value of $\varphi$.
@@ -446,6 +446,8 @@ $\mathfrak{A, B, D, E \text{ and } F}$
 coefficients into one complex valued coefficient $\Cnk$. The values
 of these coefficients are unknown until fitted to measurements or 
 calculated. For known coefficients, instead $C_{n,k}$ will be used.
+The permittivity constant $\mu_0$ will hereafter be baked into the
+coefficients.
 
 After a lot of algebra, this yields
 \begin{equation} \label{eq:Psi}
