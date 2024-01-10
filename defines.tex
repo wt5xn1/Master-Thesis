@@ -14,7 +14,7 @@
 
 % BFF potential series
 \newcommand{\Bc}{\frac{2\pi}{L}}
-\newcommand{\Cnk}[1][nk]{\mathfrak{C}_{#1}}
+\newcommand{\Cnk}[1][n,k]{\mathfrak{C}_{#1}}
 \newcommand{\Bffok}{ \frac{1}{2}
     \sum\limits_{\substack{k=-\infty\\k\neq 0}}^\infty
     \Cnk[0,k] \In{0} \left( \Bc |k|r \right)
@@ -57,8 +57,8 @@
 }
 
 \newcommand{\Bffrno}{ \frac{1}{2}
-    \sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty
-    \Cnk[n,0] |n|r^{|n|-1}\exp(jn\varphi)
+\sum\limits_{\substack{n=-\infty\\n\neq 0}}^\infty
+\Cnk[n,0] |n|r^{|n|-1}\exp(jn\varphi)
 }
 
 \newcommand{\Bffrnk}{ \frac{1}{4}
@@ -84,4 +84,9 @@
     j^{-|n|+1}\In{|n|} \left( \Bc |k|r \right)
     \exp \left( j \Bc kz \right)
     \exp(jn\varphi)
+}
+
+% Distance matrix
+\newcommand{\pdist}[2]{
+    \Vert\vb{p_{#1}} - \vb{p_{#2}}\Vert 
 }

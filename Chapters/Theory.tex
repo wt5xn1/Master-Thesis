@@ -258,7 +258,7 @@ While the differential equations in $\varPhi$ and $Z$ have a well defined
 set of solutions using elementary functions like sines, cosines and exponentials,
 equation \ref*{eq:diffeqR} is a bit trickier. This equation is known as
 the Bessel differential equation, and solving it will require a
-set of functions known as the Bessel functions. \cite{weisstein_bessel}
+set of functions known as the Bessel functions. \cite{weisstein_bessel_nodate}
 
 \subsection{Bessel Functions}
 The Bessel functions are defined as the solutions to equation \ref*{eq:diffeqR}.
@@ -271,7 +271,7 @@ The actual calculation of the Bessel functions is outside the scope of this thes
 more than stating that they are implemented in most popular programming languages.
 Still, a short overview of the properties of the most relevant subset of Bessel
 functions will aid greatly in finding the solutions to our magnetic scalar potential.
-\cite{weisstein_bessel}
+\cite{weisstein_bessel_nodate}
 \subsubsection{Bessel Function, First Kind}
 
 The Bessel function of the first kind is a collection of functions that are nonsingular
@@ -300,7 +300,7 @@ Another important property is
     \Jn{0}(0) & = 1                                  \\
     \Jn{n}(0) & = 0, \, \forall n\in\mathbb{Z}/\{0\}
 \end{align}
-\cite{weisstein_bessel_first_kind}
+\cite{weisstein_bessel_nodate-2}
 \subsubsection{Modified Bessel Function, First Kind}
 For the bessel function of the first kind with imaginary
 arguments, the modified Bessel function $\In{n}(x)$ is often used.
@@ -309,7 +309,7 @@ through the equality
 \begin{equation}
     \In{n}(x) = j^{-n}\Jn{n}(jx)
 \end{equation}
-\cite{weisstein_modified}
+\cite{weisstein_modified_nodate}
 The first five terms of $\In{n}$ can be seen in figure \ref*{fig:Inplot}.
 
 \begin{figure}[h]
@@ -322,7 +322,7 @@ The first five terms of $\In{n}$ can be seen in figure \ref*{fig:Inplot}.
 \subsubsection{Bessel Function, Second Kind}
 The bessel function of the second kind is a solution to
 the bessel differential equation that is singular at the
-origin. It can be seen in figure \ref{fig:Ynplot}.\cite{weisstein_bessel_second_kind}
+origin. It can be seen in figure \ref{fig:Ynplot}.\cite{weisstein_bessel_nodate-1}
 
 \begin{figure}[h]
     \centering
@@ -332,6 +332,7 @@ origin. It can be seen in figure \ref{fig:Ynplot}.\cite{weisstein_bessel_second_
 \end{figure}
 
 \subsection{Bessel-Fourier-Fourier Series}
+\label{subsec:BFF}
 With the set of potential solutions to $\Psi(r,\varphi,z)$ established,
 we can start to eliminate the impossible ones. The domain $\Omega$
 is spanned by the magnetometer and its path along the z axis, making up
@@ -753,7 +754,7 @@ around the x axis, the integral of $B_y$ along $\vb{l_1}$ becomes
 \begin{equation}
     \int\limits_{\vb{l_1}}B_y d\vb{l_1} =
     \tan\left( \frac{\theta}{2} \right)  \int\limits_{\vb{l_1}}B_z d\vb{l_1}
-    \approx \tan\left( \frac{\theta}{2} \right) NI
+    \approx \mu_0\tan\left( \frac{\theta}{2} \right) NI
 \end{equation}
 
 as can be seen in the simulation results in figure \ref{fig:dipoleplot}.
@@ -765,7 +766,8 @@ in equation \ref{eq:Czz}, the following can be said about the
 dipole components in $r, \varphi$
 
 \begin{align}
-    |C_{1,0} + C_{-1,0}| &\approx \tan\left( \frac{\theta}{2} \right) \frac{NI}{L} \\
+    |C_{1,0} + C_{-1,0}| &\approx \mu_0
+    \tan\left( \frac{\theta}{2} \right) \frac{NI}{L} \\
     \arg(C_{1,0} + C_{-1,0}) &= \alpha + \frac{\pi}{2}
 \end{align}
 where $\alpha$ is the angular offset from the $x$ axis to the rotation
