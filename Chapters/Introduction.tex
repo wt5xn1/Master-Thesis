@@ -114,6 +114,7 @@ can be acquired for each coil.
 \end{figure}
 
 \section{Project Purpose and Goal}
+\label{sec:project_purpose}
 The stringent requirements on the field of the AD cooler means the
 magnetic measurements must be of high quality. Given that this is
 a relatively new measurement methodology, meterological characterization
@@ -146,7 +147,8 @@ times. Through some simple trigonometry, the relative tilt between the
 solenoid and fluxmeter axis can then be estimated from the distance between
 the peaks $\Delta z$ and the distance between the coils $d$.
 \begin{equation}
-    \theta = \arctan \left( \frac{d}{\Delta z} \right)
+    \theta = \arctan \left( \frac{\Delta z}{d} \right)
+    \label{eq:angle_estimation}
 \end{equation}
 
 Where $\theta$ is the relative tilt angle.

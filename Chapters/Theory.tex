@@ -667,6 +667,7 @@ higher order harmonics in $n$.
 
 \FloatBarrier
 \subsection{Dipole Components and the Integrated Field}
+\label{sec:theory-dipoles}
 By using Stokes theorem on equation \ref{eq:maxwell2}, one gets Amperes Law
 in integral form,
 \begin{equation}
@@ -730,45 +731,5 @@ surrounding the domain.
 The dipoles in $r$ and $\varphi$ do
 depend on the angle $\theta$. This relationship can not easily
 be found algebraically, and has instead been investigated through CAD simulations
-and numerical integration of simple current loops. A study was set up like in figure
-\ref{fig:ampereloop}, with $\theta$ as a parameter. The numerical integral of
-both $B_z$ and $B_y$ were taken along $\vb{l_1}$. In the CAD simulations, the solenoid
-parameters radius, length and width were varied. In both the CAD simulations
-and numerical integrations, the $x$ and $y$ offset of $\vb{l_1}$ was randomly varied
-between simulation passes, making sure that the $x, y$ offsets were small enough
-for $l_1$ to pass through the solenoid.
-
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=\linewidth]{figs/dipoleplot}
-    \caption{}
-    \label{fig:dipoleplot}
-\end{figure}
-
-Regardless of all of the variations between simulation passes, the results were
-exactly alike down to floating point precision in the numerical integration
-simulations, and down to discretization errors in the CAD simulations.
-The simulations suggest that when a solenoid is tilted with an angle $\theta$
-around the x axis, the integral of $B_y$ along $\vb{l_1}$ becomes
-
-\begin{equation}
-    \int\limits_{\vb{l_1}}B_y d\vb{l_1} =
-    \tan\left( \frac{\theta}{2} \right)  \int\limits_{\vb{l_1}}B_z d\vb{l_1}
-    \approx \mu_0\tan\left( \frac{\theta}{2} \right) NI
-\end{equation}
-
-as can be seen in the simulation results in figure \ref{fig:dipoleplot}.
-Furthermore, the value of the $By$ integral along $\vb{l_1}$
-is invariant to the $x,y$ location of $\vb{l_1}$ inside the solenoid.
-This suggests that no higher order multipoles than the dipoles are
-created when the solenoid is tilted. Using similar reasoning as 
-in equation \ref{eq:Czz}, the following can be said about the 
-dipole components in $r, \varphi$
-
-\begin{align}
-    |C_{1,0} + C_{-1,0}| &\approx \mu_0
-    \tan\left( \frac{\theta}{2} \right) \frac{NI}{L} \\
-    \arg(C_{1,0} + C_{-1,0}) &= \alpha + \frac{\pi}{2}
-\end{align}
-where $\alpha$ is the angular offset from the $x$ axis to the rotation
-axis of the solenoid.
+and numerical integration of simple current loops. This is further explored
+in section \ref{sec:dipole-simulations}.

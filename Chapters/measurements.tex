@@ -139,3 +139,27 @@ that are positioned along the yaw axis. A first order linear approximation
 gives a rate of $0.17$ mm peak shift per mrad. The mean of the standard
 deviations of the peak shifts is $0.73$ mm. This means that the sensitivity
 in the measurement of peak shifts is about $4.29$ mrad.
+
+Next, the angle was estimated using the model presented in
+section \ref{sec:project_purpose}. The peak shift $\Delta z$
+and the distance $d=80$ mm was used to estimate the yaw angle,
+according to equation \ref{eq:angle_estimation}.
+
+\begin{equation}
+    \theta = \arctan \left( \frac{\Delta z}{d} \right)
+    \tag{\ref{eq:angle_estimation} revisited}
+\end{equation}
+
+This did unfortunately not yield very exciting results, as
+can be seen in figure \ref{fig:measured_angles}. The angle
+is consistently overestimated using this model. The reason 
+for this was investigated in a simulation campaign, which is
+presented in chapter \ref{sec:simulations}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figs/measured_angles}
+    \caption{Estimated angles from peak shift measurements
+    compared to actual angles.}
+    \label{fig:measured_angles}
+\end{figure}

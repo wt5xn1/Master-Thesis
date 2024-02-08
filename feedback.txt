@@ -1,0 +1,80 @@
+Hej Ville,
+
+
+det tar lite mer tid att läsa genom din rapport än vad jag hade trodd från början. Mycket intressant och bra läsning, och jag är inte klar än. Men här kommer några första kommentarer till den första halvan.
+
+ 
+
+a) din "abstract" börjar med två förkortningar. Jag tycker att du får förutsätta att dina läsare vet vad CERN är, men AD-experimentet förklarar du inte här och inte heller senare. Förklara bokstäverna och även själva experimentet kan förtjäna några extra ord, till exempel att det är just antiprotoner i strålen och att det är dessa som ska bromsas ned. 
+
+ 
+
+b) "in the order of B/B < 10E-10" - för det första så skulle 10E-10 vara 10x 10^{-10} eller samma som 1E-9, och för det andra ser det inte snyggt ut.
+
+ 
+
+c) "coils wound on a pcb", nja, spolarna är ju inte direkt lindade... men mer om det längre ned...
+
+ 
+
+d) "hall mapper" - är det nånting som ritar en karta över en sal? Självaste Hall-effekten ska nog skrivas med ett stort H till äran av Edwin Hall. Sedan tycker jag att en omskrivning som "Hall-effect based sensors and stretched wire systems" låter lite bättre här
+
+ 
+
+e) "Using printed circuit boards (pcbs) as fluxmeters..." - pcb är kanske inte heller en förkortning som alla känner till...
+
+ 
+
+f) sida 9: "In simple cases .... the easy relations..." jag skulle bara stryka "easy" här
+
+ 
+
+g) sida 10: liksom Hall så vill Faraday också gärna ha sin versal. Lite längre ned, "volume V must equal zero 0.
+
+ 
+
+h) det återkommer efter sida 15 ju flera gånger, även som förkortning, men varför "Bessel-Fourier-Fourier" ? 
+
+ 
+
+i) sida 18 "Technically, summands 1, 2 and 4" skulle du kunna markera dessa i din ekvation? T.ex. så är det för mig från början oklar, om "C_{0,0 Z}"
+
+ är term #0 eller #1 
+
+ 
+
+j) jag tycker om dina Figurer 2.7-2.13, men till 2.8 hittar jag ingen hänvisning i texten, det kan ju inte vara så att 2.8 tillhör "Multipoles in r,\varphi", om 2.9 och 2.10 beskrivs i avsnittet innan?
+
+ 
+
+k) Fig 2.18 vad vill du visa med den undre halvan? att 2arctan(x) har en större lutning än arctan? Eller relaterar dessa två kurvor till den röda kurvan i den övre halvan?
+
+ 
+
+l) kapitel 3: MER, jag vill ha MER! Kan du visa en bättre skiss över PCB:n? Det går inte att se nånting i 3.2(a). Kortet verkar bestå av flera lager med lindningar (senare under din analys): hur många? Vilka dimensioner har kortet, vilken dimension har ledarna, hur exakt ser dina spolar Q ut? Hur tas anslutningarna ut från kortet så att ledningarna inte påverkar/påverkas av andra spolar?
+
+ 
+
+m) laser tracker - jag har en känsla att du inte ger instrumentet rättvisa här. "Enkel" time-of-flight skulle nog inte ge dig mer än bara avståndet mellan proben och trackern - men den här ger dig ju fullständig information om probens position placering i rummet, enligt reklambladet till och med i 6DoF, även om jag inte riktigt förstår hur Leica menar här. Och även här får (ska!) du gärna ange trackern med sitt namn inte bara med en länk till referenslistan (bra!) fast även i löptext.
+
+ 
+
+n) "positional encoder": 23,0095cm per varv - påverkas detta om tråden ligger ovanpå varandra när den lindas upp på sin spole? "Standard deviation of 6.69µm" låter också som rätt många värdesiffra för ett statistiskt mått... 0.11 mm ± 0.00669 mm - när jag delar 23,0095/2048=0.1123 din avrundning ger större fel än din standardavvikelse.... Och om möjligt: ange gärna en referens till vinkelenkodern, tillverkare, modell
+
+ 
+
+o) "Fast Digital Integrator" även här skulle det vara bra med en referens, samt kanske vad en FDI egentligen gör eller hur den fungerar. "integrated voltage with respect of time" - är det verkligen spolarnas öppen-krets-spänning som ni mäter? Inte laddningsmängden eller strömmen?
+
+ 
+
+....to be continued
+
+ 
+
+ 
+
+Hälsningar,
+
+ 
+
+    Uwe. 
