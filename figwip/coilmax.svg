@@ -25,15 +25,15 @@
      inkscape:pagecheckerboard="1"
      inkscape:document-units="pt"
      showgrid="false"
-     inkscape:zoom="0.46403883"
-     inkscape:cx="1075.3411"
-     inkscape:cy="359.88368"
+     inkscape:zoom="0.65625001"
+     inkscape:cx="958.47618"
+     inkscape:cy="303.23809"
      inkscape:window-width="1920"
      inkscape:window-height="1043"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g960-7-9"
+     inkscape:current-layer="g1682"
      showguides="false" />
   <metadata
      id="metadata2">
@@ -8875,12 +8875,38 @@
            height="100%" />
         <use
            xlink:href="#CMBX12-42"
-           transform="matrix(0.996264,0,0,0.996264,314.16911,0)"
+           transform="matrix(0.996264,0,0,0.996264,348.26001,0)"
            id="use1680"
            x="0"
            y="0"
            width="100%"
            height="100%" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:127.273px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math Bold';fill:#000000;stroke-width:3.86543"
+           x="302.67352"
+           y="0.54098618"
+           id="text3543"
+           transform="scale(1,-1)"><tspan
+             sodipodi:role="line"
+             id="tspan3541"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:127.273px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math Bold';stroke-width:3.86543"
+             x="302.67352"
+             y="0.54098618"
+             dx="0 -16.883118">||</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:127.273px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math Bold';fill:#000000;stroke-width:3.86543;stroke-linecap:butt;stroke-linejoin:round"
+           x="418.58276"
+           y="0.54098618"
+           id="text3543-8"
+           transform="scale(1,-1)"><tspan
+             sodipodi:role="line"
+             id="tspan3541-2"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:127.273px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math Bold';stroke-width:3.86543"
+             x="418.58276"
+             y="0.54098618"
+             dx="0 -16.883118">||</tspan></text>
       </g>
     </g>
     <g

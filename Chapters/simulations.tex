@@ -1,6 +1,6 @@
 \chapter{Simulations}
 
-\section{Solenoid tilt angle and its effect on the $B_z$ field peaks}
+\section{Solenoid tilt-swing angle and its effect on the $B_z$ field peaks}
 \label{sec:simulations}
 
 To further understand why the model presented in equation
@@ -45,7 +45,7 @@ and $l_2$ go through the numerical singularities inside the magnet.
             Magnet Width/Thickness & \emph{W}       & $0.0-0.4$ m   & 6               \\
             Magnet Length          & \emph{L}       & $0.0-0.5$ m   & 9               \\
             Line $y$ offset        & $y_{off}$      & $0.05-0.2$ m  & 11              \\
-            Magnet yaw angle       & \emph{Rot}     & $0.0-0.5$ rad & 31
+            Magnet yaw angle       & $\theta$       & $0.0-0.5$ rad & 31
         \end{tabular}
         \caption{Simulation parameter values}
         \label{tab:parameter-vals}
@@ -60,7 +60,7 @@ verified using FEM simulations with a similar magnet model.
 Figure \ref{fig:sim-mag-dimensions} gives an idea of the general impact that the
 magnet dimensions have on the peak shifts. For each plot, the other magnet dimensions
 are constant. A key takeaway is that most magnet dimensions do not affect
-the peak shift that much at the chosen parameter values, especially at 
+the peak shift that much at the chosen parameter values, especially at
 lower yaw angles. The offset from the axis however has a great effect.
 
 
@@ -73,7 +73,7 @@ lower yaw angles. The offset from the axis however has a great effect.
 
 The effect of the $y$ offset can be clearly seen in figure
 \ref{fig:sim-mag-fieldmap-argmax}. Unfortunately, it does not seem
-that the effect is easily modeled. For a simple current loop, the peak 
+that the effect is easily modeled. For a simple current loop, the peak
 shifts could be modeled by fitting the maxes to some tangent function
 in $y$, but for more realistic magnet models, discontinuites are present as
 the $y$ offset approaches the magnet ends. These discontinuites are
@@ -83,7 +83,7 @@ Clearly, the simple model
 presented in equation \ref{eq:angle_estimation} will overestimate
 the angle since the $B_z$ peaks are not distributed along the geometric
 solenoid centre, but rather further out. The $\Delta z$ argument in
-equation \ref{eq:angle_estimation} will thus be larger than the model 
+equation \ref{eq:angle_estimation} will thus be larger than the model
 expects.
 
 
@@ -91,14 +91,14 @@ expects.
     \centering
     \includegraphics[width=\linewidth]{figs/sim-fieldmap}
     \caption{$\vb{B}$ and $B_z$ argmax over $y$, for a simple current
-    loop and coil made up of several current loops. Yaw angle at $500$ mrad.}
+        loop and coil made up of several current loops. Yaw angle at $500$ mrad.}
     \label{fig:sim-mag-fieldmap-argmax}
 \end{figure}
 
 \section{The transversal integral field and dipoles}
 \label{sec:dipole-simulations}
 In section \ref{sec:theory-dipoles} it was shown that the integral
-$B$ field and subsequently the $z$ dipole in field 
+$B$ field and subsequently the $z$ dipole in field
 series expansions was
 
 
@@ -109,7 +109,7 @@ series expansions was
 
 for a line integral going through a solenoid, regardless of the yaw
 angle $\theta$. $\vb{l}$ is a curve whose image
-is a line with length L and whose ends are far from the magnet, where 
+is a line with length L and whose ends are far from the magnet, where
 the magnetic field strength is negligible.
 
 Now, let $\vb{l}$ be parallel with the $z$ axis, and instead take the
@@ -117,9 +117,9 @@ transversal integral fields, as in equations \ref{eq:Bx-Integral} and
 \ref{eq:By-Integral}.
 
 \begin{align}
-    I_{\vb{l}}(B_x) &:= \int \limits_{\vb{l}} B_x d\vb{l} 
-    \label{eq:Bx-Integral}\\
-    I_{\vb{l}}(B_y) &:= \int \limits_{\vb{l}} B_y d\vb{l}
+    I_{\vb{l}}(B_x) & := \int \limits_{\vb{l}} B_x d\vb{l}
+    \label{eq:Bx-Integral}                                 \\
+    I_{\vb{l}}(B_y) & := \int \limits_{\vb{l}} B_y d\vb{l}
     \label{eq:By-Integral}
 \end{align}
 
@@ -127,7 +127,7 @@ This could be
 likened to measuring the $x$ and $y$ field by translating a hall sensor
 through the solenoid, and then taking the integral of the measurements.
 It was discovered in the work on this thesis, that the aforementioned
-integral fields seems to be connected to the yaw/pitch angle of the 
+integral fields seems to be connected to the yaw/pitch angle of the
 solenoid.
 
 This relationship can not easily
@@ -168,7 +168,7 @@ or alternatively
 
 
 A randomly chosen subset of the simulation results are plotted in figure \ref{fig:ByInt3D}.
-The markers shows the left hand side of equation \ref{eq:Byint-Error} 
+The markers shows the left hand side of equation \ref{eq:Byint-Error}
 as calculated from the simulations and the right hand side is represented by the translucent
 blue surface.
 Each of the parameters \emph{L}, \emph{W} and \emph{R} are represented
@@ -177,7 +177,8 @@ equation \ref{eq:tanhalf} holds over all the simulated parameters.
 
 The accuracy is further studied in figure \ref{fig:ByInt-Error},
 showing the difference \newline
-$\frac{I_{\vb{l}}(B_y)}{\mu_0NI} - \arctan(\frac{\theta}{2})$, which
+$\frac{I_{\vb{l}}(B_y)}{\mu_0NI} - \arctan(\frac{\theta}{2})$ and its upper
+and lower bounds from every simulation, which
 we will call the error function $E$. Although the error function
 is never large in the simulated range of parameters,
 it grows with the angle $\theta$.
@@ -186,18 +187,22 @@ it grows with the angle $\theta$.
     \centering
     \includegraphics[width=\linewidth]{figs/ByIntError}
     \caption{Plot showing the error function $E$, comparing the simulated results
-    with equation \ref{eq:Byint-Error}.}
+        with equation \ref{eq:Byint-Error}.}
     \label{fig:ByInt-Error}
 \end{figure}
 
 
-A likely cause is that as the solenoid rotates, the coil windings 
-get closer to the line $\vb{l}$ where the integral is evaluated. The 
+A likely cause is that as the solenoid rotates, the coil windings
+get closer to the line $\vb{l}$ where the integral is evaluated. The
 proximity of the singularities in the windings makes the partial derivative
 of the field over $z$ higher, making the discretization errors larger.
 To verify this, the error function $E$ was calculated with a single coil
-model, this time varying the discretization size instead. As the number
-of integration samples grows, the error shrinks up to a point where it  
+model, this time varying the discretization size instead. The magnet model
+used had the parameters $L=0.2$m, $W=0.05$m and $R=0.3$m. The line offset
+was zero and the angle $\theta=0.8$rad.
+
+As the number
+of integration samples grows, the error shrinks up to a point where it
 flattens out, as seen in figure \ref{fig:ByInt-Error-convergence}. It seems
 that the limits of the numerical simulations were reached.
 
@@ -205,16 +210,17 @@ that the limits of the numerical simulations were reached.
     \centering
     \includegraphics[width=\linewidth]{figs/ByInt-Convergence.png}
     \caption{Plot showing the error function $E$, and how it converges with
-    more integration samples.}
+        more integration samples.}
     \label{fig:ByInt-Error-convergence}
 \end{figure}
 
 Now, looking back at the BFF series from section
 \ref{subsubsection:solenoid-harmonics}, specifically the
-multipoles in $r$ and $\varphi$, 
+multipoles in $r$ and $\varphi$ as in equation \ref{eq:BFFmultipoles}
 
 \begin{equation}
     \Bffno
+    \label{eq:BFFmultipoles}
 \end{equation}
 
 the simulation results presented above can be used to determine
@@ -223,14 +229,15 @@ integrals \ref{eq:By-Integral} and \ref{eq:Bx-Integral} since
 $\vb{l}$ spans exactly one period. Furthermore, the
 $x$ and $y$ offset do not affect the value of the integral.
 This suggests that no higher order multipoles than the dipoles are
-created when the solenoid is tilted. Using similar reasoning as 
-in equation \ref{eq:Czz}, the following can be said about the 
+created when the solenoid is tilted, since they vary with $x$ and $y$ 
+(or $r$ and $\varphi$, analogously). Using similar reasoning as
+in equation \ref{eq:Czz}, the following can be said about the
 dipole components in $r, \varphi$ for the BFF series
 
 \begin{align}
-    |C_{1,0} + C_{-1,0}| &\approx \mu_0
-    \tan\left( \frac{\theta}{2} \right) \frac{NI}{L} \\
-    \arg(C_{1,0} + C_{-1,0}) &= \alpha + \frac{\pi}{2}
+    |C_{1,0} + C_{-1,0}|     & \approx \mu_0
+    \tan\left( \frac{\theta}{2} \right) \frac{NI}{L}    \\
+    \arg(C_{1,0} + C_{-1,0}) & = \alpha + \frac{\pi}{2}
 \end{align}
 where $\alpha$ is the angular offset from the $x$ axis to the rotation
 axis of the solenoid.

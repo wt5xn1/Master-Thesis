@@ -35,7 +35,7 @@ In differential form for the stationary case, these are as follows:
 Since we're dealing with measurement of magnetic fields in this thesis,
 equations \ref{eq:maxwell1} and \ref{eq:maxwell3} will naturally be of
 the most interest. In simple cases, the $\vb{H}, \vb{D}, \vb{E}$ and
-$\vb{B}$ field obey the easy relations
+$\vb{B}$ field obey the relations
 \begin{align}
     \vb{B} & = \mu \vb{H}
     \label{eq:BHmap}           \\
@@ -84,7 +84,7 @@ We then have the following governing laws of electromagnetism for objects at res
     \end{subfigure}
     \caption{}
 \end{figure}
-Equation \ref{eq:faraday}, also called faradays law, describes the voltage\
+Equation \ref{eq:faraday}, also called Faradays law, describes the voltage\
 $U$ induced in a length of wire $\partial\area$, enclosing an area
 $\area$, when the magnetic flux $\Phi$ is changing with respect to time.
 The signs of $U$ and $\Phi$ obey the right hand rule as indicated
@@ -92,7 +92,7 @@ in figure \ref{fig:partialA}.
 
 Equation \ref{eq:fluxcons} states that the total amount of flux flowing
 through the boundary $\partial\Volume$ of a volume
-$\Volume$ must equal 0.\cite[Ch.4.1.1]{russenschuck_field_2011}
+$\Volume$ must equal zero.\cite[Ch.4.1.1]{russenschuck_field_2011}
 
 \section{Series decompositions of the magnetic field}
 \label{sec:series_decompositions}
@@ -302,7 +302,7 @@ Another important property is
 \end{align}
 \cite{weisstein_bessel_nodate-2}
 \subsubsection{Modified Bessel Function, First Kind}
-For the bessel function of the first kind with imaginary
+For the Bessel function of the first kind with imaginary
 arguments, the modified Bessel function $\In{n}(x)$ is often used.
 It is related to the regular first kind Bessel function
 through the equality
@@ -320,8 +320,8 @@ The first five terms of $\In{n}$ can be seen in figure \ref*{fig:Inplot}.
 \end{figure}
 
 \subsubsection{Bessel Function, Second Kind}
-The bessel function of the second kind is a solution to
-the bessel differential equation that is singular at the
+The Bessel function of the second kind is a solution to
+the Bessel differential equation that is singular at the
 origin. It can be seen in figure \ref{fig:Ynplot}.\cite{weisstein_bessel_nodate-1}
 
 \begin{figure}[h]
@@ -438,14 +438,14 @@ while in $r$ this will be
 The $n=0$ terms for $R(r)$ and $\varPhi(\varphi)$ have been discarded,
 as that would be equivalent to a magnetic monopole, which have never
 been found experimentally, and is unlikely to be found using a simple
-solenoid magnet.\cite{Acharya2022}
+solenoid magnet.\cite{acharya_search_2022}
 
 Now, all the potential solutions can be combined into one double
 series. By also converting the Fourier series from real to complex
 valued double sided series, we can combine the
 $\mathfrak{A, B, D, E \text{ and } F}$
 coefficients into one complex valued coefficient $\Cnk$. The values
-of these coefficients are unknown until fitted to measurements or 
+of these coefficients are unknown until fitted to measurements or
 calculated. For known coefficients, instead $C_{n,k}$ will be used.
 The permittivity constant $\mu_0$ will hereafter be baked into the
 coefficients.
@@ -458,10 +458,10 @@ After a lot of algebra, this yields
     \end{split}
 \end{equation}
 
-Technically, summands 1,2 and 4 can be merged into one sum,
-they are however separated to make the distinction of the
-fundamental fourier series in z and the higher order
-harmonics clearer.
+Technically, the first, second and fourth summands
+can be merged into one sum, they are however separated
+to make the distinction of the fundamental fourier series
+in z and the higher order harmonics clearer.
 
 It is worth noting that the third summand in the above series
 are a commonly used form of two dimensional multipoles at CERN.
@@ -508,12 +508,12 @@ for the harmonics, we have
 
 \begin{table}[!h]
     \centering
-    \begin{tabular}{c c p{2cm}}
-        $\Psi_{n,k}$ & Summand      & Name                       \\ \hline
-        $\Psi_{0,0}$ & $\Cnk[0,0]z$ & Dipole in $z$              \\
-        $\Psi_{0,k}$ & $\Bffok$     & Solenoid Fundamentals      \\
-        $\Psi_{n,0}$ & $\Bffno$     & Multipoles in $r, \varphi$ \\
-        $\Psi_{n,k}$ & $\Bffnk$     & Solenoid Harmonics
+    \begin{tabular}{l c p{2cm}}
+        $\Psi_{n,k}$ & Summand         & Name                       \\ \hline
+        1. $\Psi_{0,0}$ & $\Cnk[0,0]z$ & Dipole in $z$              \\
+        2. $\Psi_{0,k}$ & $\Bffok$     & Solenoid Fundamentals      \\
+        3. $\Psi_{n,0}$ & $\Bffno$     & Multipoles in $r, \varphi$ \\
+        4. $\Psi_{n,k}$ & $\Bffnk$     & Solenoid Harmonics
     \end{tabular}
     \caption{Components of the Bessel-Fourier-Fourier Series.}
     \label{tab:BFF-components}
@@ -521,10 +521,11 @@ for the harmonics, we have
 
 Using numerical calculations from a simple current loop
 Biot-Savart model, the BFF series was fitted to $\vb{B}$
-field points inside a cylindrical domain. This way, we
-can easily obtain field distributions of the individual harmonics.
-Here, only the first two harmonics $n\in\{0,1\}$ will be
-shown.
+field points inside a cylindrical domain. The procedure
+for this fitting is described in section \ref{sec:BFF-fitting}.
+With this fitting, we can easily obtain field distributions of
+the individual harmonics. Here, only the first two
+harmonics $n\in\{0,1\}$ will be shown.
 
 \subsubsection{Dipole in $z$}
 The most fundamental part of the BFF series, this component
@@ -545,9 +546,10 @@ intensity.
 \subsubsection{Solenoid Fundamentals}
 The solenoid fundamentals describes the most basic solenoid
 field, with no dependence on $\varphi$. The field is
-perfectly symmetrical latitudinally around the $z$ axis.
+perfectly symmetrical latitudinally around the $z$ axis, as
+seen in figure \ref{fig:solfun} 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/solfun.png}
     \caption{Field distribution of the solenoid fundamentals}
@@ -558,7 +560,7 @@ The solenoid fundamentals along with the dipole in $z$ are
 sufficient to describe an ideal solenoid field. They are
 plotted together in figure \ref{fig:solfundip}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/solfundip.png}
     \caption{Field map of an ideal solenoid field.}

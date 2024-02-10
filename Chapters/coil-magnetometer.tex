@@ -19,13 +19,15 @@ wire is connected to the PCB sledge on one end, and spooled up around
 a rotating encoder on the other end. In the middle of the PCB, a
 reflector is mounted for the laser tracker.
 
-\section{PCB printed coils}
+\section{Printed Circuit Board Coils}
 The coil PCB has 21 different coils.
 These coils are in the shapes of disks or annulus segments.
 A render of the pcb can be seen in figure
 \ref{fig:pcb}. The disks are denoted $D_l$ and the
-annulus segments by $Q_{q, l}$ where $l$ is the radial layer and
-$q$ is the quadrant, as seen in figure \ref{fig:nomenclature}.
+annulus segments by $Q_{q, l}$ where $l$ is the radial offset and
+$q$ is the quadrant, as seen in figure \ref{fig:nomenclature}. The
+PCB has a radius of approximately 46 mm, where each radial layer
+is separated by 9 mm.
 
 \begin{figure}[!h]
     \centering
@@ -51,6 +53,56 @@ to Faradays Law, equation \ref{eq:faraday}. Although the field is
 static, since the fluxmeter is moving it will still see a delta
 flux with respect to time.
 
+Figure \ref{fig:pcbwindings} shows how the coils are printed on the 
+PCB. Wires are connected from a switchboard which in turn connects to
+the FDI:s, where the induced voltages are sampled. These wires are 
+soldered on to the solder pads on the PCB, which connect to the ends
+of the coils.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{figs/pcb-coil-windings}
+    \caption{Coil $Q_{1,1}-Q_{4,1}$ and coil $D_1$ as printed on the first
+    two copper layers on the pcb.}
+    \label{fig:pcbwindings}
+\end{figure}
+
+From the solder pad connecting to the first copper
+layer, the coil is then printed in windings, going clockwise for the
+annulus segments and anti clockwise for the disks. Each coil winds for
+approximately six turns per layer, connects to the next as illustrated by
+the lettered vias. This continues on for ten layers before it connects to
+the other solder pad. Care has been taken to ensure that the sum total
+of turns is as close to an integer number of turns as possible, that is
+six turns times ten layers for approximately 160 turns. Where one layer
+has a bit less than six turns, the next instead has a bit more. 
+To ensure that the turns always go in the same direction, the turns alternate
+between going inside to outside and outside to inside for each layer.
+Otherwise the induced flux from each layer would have opposite signs,
+giving close to zero induced voltage. 
+
+The sum total surface area of the coils was calculated numerically, as
+the differences in turn radius and odd shapes make analytical
+estimations inaccurate. The method of doing this is described in 
+section \ref{sec:coil-modeling}. The areas are presented in table
+\ref{tab:coil-areas}.
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{c c c c c c}
+            Coil name & $D_1$ & $D_2$ & $D_3$ & $D_4$ & $D_5$ \\
+            Area [$m^2$] & $0.00511$ & $0.03555$ & $0.10599$ & $1.10599$ & $2.10599$ \\
+            \hline
+            Coil name & $Q_{q,1}$ & $Q_{q,2}$ & $Q_{q,3}$ & $Q_{q,4}$ & \\
+            Area [$m^2$] & $0.00257$ & $0.00731$ & $0.01202$ & $0.01673$ &
+        \end{tabular}
+        \caption{Surface areas of each coil}
+        \label{tab:coil-areas}
+    \end{center}
+\end{table}
+
+
+
+
 \section{The Measurement Assembly}
 A picture of the magnet with the guiding tube and tube clamps can be seen in
 figure \ref{fig:magnetassembly}. In figure \ref{fig:leica}, the laser tracker
@@ -71,15 +123,21 @@ can be seen, locked onto the target on the fluxmeter pcb.
 \end{figure}
 
 \section{Geometric Measurements}
-The laser tracker works by shooting a laser at a reflector, and then
-measuring the time of flight. The accuracy depends on the reflector
+The laser tracker used was a Leica Absolute Tracker AT930.
+It works by shooting a laser at a reflector, and then
+measuring the time of flight. By also measuring the direction of gravity
+and its own yaw and pitch, each measured point can be placed in a relative
+position to each other. After measuring a minimum of three stationary
+reference points, each measurement thereafter can be accurately mapped
+in 3D space.
+The accuracy depends on the reflector
 type and measurement time, but an upper limit of
 0.2 mm is a reasonable estimate according to the
 specifications of both the reflectors and laser tracker
 used. \cite{noauthor_leica_2015}.
 
-Firstly, scans were done of a network of reflectors around the
-room. These points were then used as a baseline to locate the
+Firstly, scans were done of a network of stationary reference reflectors
+around the room. These points were then used as a baseline to locate the
 laser tracker at the start of each measurement campaign, or when
 the laser tracker needed to be moved. A cluster of points were
 taken of the magnet itself. These points
@@ -111,14 +169,20 @@ as desired.
 
 \section{Positional Encoder}
 The positional encoder is a rotating encoder connected to a wire spool.
+The encoder is of type SICK DFS60A-S1PA \cite{noauthor_dfs60a-s1pa65536_nodate}
+and the wire draw mechanism of type SICK MRA-G80 \cite{noauthor_mra-g080-103d3_nodate}.
 As the fluxmeter moves through the the magnet, it pulls on the wire,
 spinning the rotating encoder. The encoder is of a 16 bit type, meaning
 it sends out a pulse $2^{16} = 65536$ times per turn. These pulses were
 decimated by a factor of 32, giving 2048 pulses per turn. By triggering
 the laser tracker with these pulses, it was found that one turn corresponds
 to a fluxmeter translation of $23.0095$ cm along the axis. The distance
-per pulse were measured to be $0.11$ mm, with a standard deviation of
-$6.69 \, \mu \text{m}$.
+per pulse were measured to be $0.11235$ mm, with a standard deviation of
+$6.69 \, \mu \text{m}$. By repeated measurements, it was found that the
+variance did not change noticeably over the length of the wire. The
+uncertainty then most likely comes from measurement errors in the laser
+tracker and foremost the fact the sledge does not follow a perfectly
+straight line during measurements.
 
 \begin{figure}[h]
     \centering
@@ -130,10 +194,12 @@ $6.69 \, \mu \text{m}$.
 
 \section{Fast Digital Integrators}
 The fast digital integrators (FDI:s) are used to align flux measurements
-with their geometric positions. They continuously sample the voltages
+with their geometric positions. These are developed in house at CERN.
+\cite{arpaia_fast_2006}
+They continuously sample the voltages
 from the fluxmeter coils at $500$ kHz. For every trigger from the encoder,
 the FDI:s outputs the integrated voltage with respect to time, with the
-integration limits being the last two triggers. This
+integration limits being the last two trigger times. This
 corresponds to the change in flux between two trigger times $t_i$. Since these
 triggers are fired at specific points along the fluxmeter axis, the
 delta fluxes can easily be mapped from time to geometric position, as in

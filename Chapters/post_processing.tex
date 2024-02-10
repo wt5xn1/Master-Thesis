@@ -18,6 +18,7 @@ the whole measurement domain. This is more complicated however,
 and requires good modeling of the PCB coils.
 
 \section{Coil Modeling}
+\label{sec:coil-modeling}
 To fit the BFF series to the flux measurements from the translating
 fluxmeter, one needs to take the surface integrals of the coils.
 The coil shapes are made up of several spiraling turns, and cannot be
@@ -246,6 +247,7 @@ coil produces 7 indicator functions, one for every turn.
 
 
 \section{Coil Deconvolution and Sensitivity}
+\label{sec:coil-deconvolution}
 With a way to compute the flux integrals of the coils, the
 magnetic flux density can now be properly deconvoluted
 from the flux measurements. The flux integral for a
@@ -340,7 +342,7 @@ in equation \ref{eq:matrixmodel}.
 
 The least squares problem is then formulated as finding the
 coefficients $\frak{C}$ that minimizes the expression
-$\| \frak{C}X - S \|$.
+$\| X\frak{C} - S \|$.
 The $\Cnk$ coefficients can now easily be found using a
 least squares solver. Furthermore, measurements from
 several coils can be added to the equation, allowing one
@@ -399,6 +401,7 @@ and the geometric frequency in $\varphi$
 \end{equation}
 
 \section{Bessel-Fourier-Fourier Series Fitting}
+\label{sec:BFF-fitting}
 On the fluxmeter, there are four
 sector coils per radial layer, giving us four points in $\varphi$.
 Using the Nyquist criterion along with equation \ref{eq:fphi}
@@ -437,23 +440,23 @@ some chosen coils can be seen in table \ref{tab:fitting-errors}.
 From these results, it can be seen that the
 fitting error is generally around the same magnitude, but tends
 to be smaller the larger the coil is, both in absolute and
-normalized terms. A likely explanation is that for coils 
+normalized terms. A likely explanation is that for coils
 with a smaller surface area, errors in the coil surface
 modeling will have a larger impact.
 
 \begin{table}[!h]
     \centering
     \begin{tabular}{l p{2cm} p{2cm} p{2cm} p{2cm}}
-            & Mean Error {[}Wb{]} & Max Error {[}Wb{]} & Mean Error Normalized {[}\%{]} & Max Error Normalized (\%) \\ \hline
-        D1  & 1.30E-05            & 3.50E-05           & 3.08\%                         & 8.30\%                    \\
-        D2  & 2.07E-05            & 4.17E-05           & 0.73\%                         & 1.48\%                    \\
-        D3  & 1.13E-05            & 2.36E-05           & 0.13\%                         & 0.28\%                    \\
-        D4  & 4.18E-05            & 8.63E-05           & 0.24\%                         & 0.50\%                    \\
-        D5  & 4.84E-06            & 2.93E-05           & 0.02\%                         & 0.10\%                    \\
-        Q11 & 1.08E-05            & 2.57E-05           & 4.98\%                         & 11.86\%                   \\
-        Q12 & 7.26E-06            & 1.48E-05           & 1.23\%                         & 2.50\%                    \\
-        Q13 & 1.61E-06            & 7.56E-06           & 0.17\%                         & 0.79\%                    \\
-        Q14 & 1.39E-06            & 4.30E-06           & 0.10\%                         & 0.32\%
+            & Mean Error {[}Wb{]} & Max Error {[}Wb{]} & Mean Error Normalized & Max Error Normalized \\ \hline
+        D1  & 1.30E-05            & 3.50E-05           & 3.08\%                & 8.30\%               \\
+        D2  & 2.07E-05            & 4.17E-05           & 0.73\%                & 1.48\%               \\
+        D3  & 1.13E-05            & 2.36E-05           & 0.13\%                & 0.28\%               \\
+        D4  & 4.18E-05            & 8.63E-05           & 0.24\%                & 0.50\%               \\
+        D5  & 4.84E-06            & 2.93E-05           & 0.02\%                & 0.10\%               \\
+        Q11 & 1.08E-05            & 2.57E-05           & 4.98\%                & 11.86\%              \\
+        Q12 & 7.26E-06            & 1.48E-05           & 1.23\%                & 2.50\%               \\
+        Q13 & 1.61E-06            & 7.56E-06           & 0.17\%                & 0.79\%               \\
+        Q14 & 1.39E-06            & 4.30E-06           & 0.10\%                & 0.32\%
     \end{tabular}
     \caption{Fitting errors for selected coils.}
     \label{tab:fitting-errors}
@@ -511,7 +514,7 @@ are presented in figures \ref{fig:3dmap}-\ref{fig:3dmapyz}
     \centering
     \includegraphics[width=\linewidth]{figs/3dxview}
     \caption{3D field map of the estimated $B_z$ field.
-    $xz$ plane.}
+        $xz$ plane.}
     \label{fig:3dmapxz}
 \end{figure}
 
@@ -519,6 +522,6 @@ are presented in figures \ref{fig:3dmap}-\ref{fig:3dmapyz}
     \centering
     \includegraphics[width=\linewidth]{figs/3dyview.png}
     \caption{3D field map of the estimated $B_z$ field.
-    $yz$ plane.}
+        $yz$ plane.}
     \label{fig:3dmapyz}
 \end{figure}

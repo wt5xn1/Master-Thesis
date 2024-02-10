@@ -1,15 +1,20 @@
 \chapter{Introduction}
-Traditionally, hall mappers and stretched wire systems have been
+Traditionally, Hall-effect based sensors and stretched wire systems have been
 used to measure solenoids at CERN. Recently, an alternative method
-has been introduced. Using printed circuit board as fluxmeters,
+has been introduced. Using printed circuit board (pcb) as fluxmeters,
 induction coils can be very precisely engineered in desired shapes
 and and sizes. Offering a large number of turns in a small area
 compared to traditionally designed measurement coils.
 \cite{petrone_induction-coil_2022}
 
 A measurement system using such a fluxmeter has been proposed for
-the new electron cooler being built for the AD experiment at CERN.
-This system now needs to be evaluated, and redesigned for the
+the new electron cooler being built for the Antiproton Decelerator
+experiment at CERN, usually called the AD experiment. This 
+experiment fires proton beams into a block of metal, creating
+antiprotons. The AD then focuses the antiprotons into a beam,
+which can be used to create antimatter. Electron cooling is
+used to improve the beam quality. \cite{noauthor_antiproton_nodate}
+The new measurement system needs to be evaluated, and redesigned for the
 particular needs of the AD cooler.
 
 
@@ -63,7 +68,7 @@ beam velocity. Any beam particles that deviates from the desired
 velocity, both axially and transversally, will transfer a higher amount
 of momentum to the electrons. Beam particles that already have the desired
 velocity and low transversal momentum, will see the electrons as stationary,
-and thus go through the cooler relatively unchanged. \cite{d_functional_2023-fs}
+and thus go through the cooler relatively unchanged. \cite{d_functional_2023}
 The functional operation
 of the electron cooler is very dependent on the field quality in the
 main drift solenoid. Any non solenoidal field components will throw
@@ -76,7 +81,6 @@ Additionally, the fringe fields of the surrounding magnets in the
 toroidal sections also add unwanted field harmonics. Because of this,
 a way of compensating for these components are needed.
 
-\newpage
 \begin{wrapfigure}{l}{0.4\textwidth}
     \includegraphics[width=0.9\linewidth]{figs/dipolecorrectors}
     \caption{Dipole correctors (red and green) at the end of a

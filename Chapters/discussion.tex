@@ -1,3 +1,29 @@
 \chapter{Discussion}
-\section{Peak shift Angle}
-\section{Future Design Considerations}
+The angle estimation from the peak shifts turned out to be 
+a harder problem than expected. As the arguments of the maximums of the
+$B_z$ field is not easily modeled with regards to the offset, finding
+a consistent model is a challenge. Some hope remains however. In figure
+\ref{fig:sim-mag-fieldmap-argmax} one can see that the argmax tends to
+the magnet ends for offsets further out. One could then build a model
+taking the magnet length and aperture radius into consideration, and measure
+the field as far from the center of the aperture as possible.
+
+Another possibility is to add coils or Hall effect sensors that measure
+the transversal $B_x$ and $B_y$ components. If the results of section 
+\ref{sec:dipole-simulations} hold for real and not only simulated magnets,
+this could be a very robust way of measuring the tilt-swing angle of the
+solenoid. Although the transversal dipole moments are not as strong as
+the $B_z$ field, the integral of the translating measurements is very
+resistant to gaussian noise. This coupled with the fact the dipole
+integral is invariant to potential offset alignment errors makes for
+a promising measurement methodology.
+
+One particularly interesting result with regards to the fitting
+of the BFF series is that only the outermost coils measurements
+were needed for a good fit. The innermost coils did not add any
+more information. This fits well with the theory on partial
+differential equations. A PDE may be completely determined
+by its values at its boundaries. This also adds robustness to the system,
+since the weaker field in the middle of the aperture can be estimated
+using measurements of the stronger field closer to the solenoid edge,
+from the more sensitive outer coils.
