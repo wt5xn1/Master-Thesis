@@ -74,24 +74,23 @@ lower yaw angles. The offset from the axis however has a great effect.
 The effect of the $y$ offset can be clearly seen in figure
 \ref{fig:sim-mag-fieldmap-argmax}. Unfortunately, it does not seem
 that the effect is easily modeled. For a simple current loop, the peak
-shifts could be modeled by fitting the maxes to some tangent function
-in $y$, but for more realistic magnet models, discontinuites are present as
-the $y$ offset approaches the magnet ends. These discontinuites are
-likely not measurable in practice though, being too close or even
-inside the windings.
+shifts seem to follow a tangent like function in $y$.
+For more realistic solenoid models with a more homogenous
+field inside, the the argmax follows a more affine curve,
+but still does not follow the geometric solenoid centre.
 Clearly, the simple model
 presented in equation \ref{eq:angle_estimation} will overestimate
 the angle since the $B_z$ peaks are not distributed along the geometric
 solenoid centre, but rather further out. The $\Delta z$ argument in
 equation \ref{eq:angle_estimation} will thus be larger than the model
-expects.
+expects, regardless of solenoid configuration.
 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{figs/sim-fieldmap}
     \caption{$\vb{B}$ and $B_z$ argmax over $y$, for a simple current
-        loop and coil made up of several current loops. Yaw angle at $500$ mrad.}
+        loop and coil made up of 600 turns.}
     \label{fig:sim-mag-fieldmap-argmax}
 \end{figure}
 
