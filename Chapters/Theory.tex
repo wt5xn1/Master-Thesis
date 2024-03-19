@@ -48,7 +48,7 @@ linear, homogenous across its domain, invariant depending on direction, and
 stationary. Since the magnetic measurements are made inside the empty aperture
 of the magnet, the domain is only made up of air. Thus, equation \ref{eq:BHmap}
 holds, and the magnetic permeability is the one of free space, that is
-$\mu = \mu_0 = 4\pi \times 10^{-7} Hm^{-1}$. \cite[Ch.4.1-4.4]{russenschuck_field_2011}
+$\mu = \mu_0 = 4\pi \times 10^{-7} \text{Hm}^{-1}$. \cite[Ch.4.1-4.4]{russenschuck_field_2011}
 
 
 \subsection{Magnetic Flux and Induction}
@@ -440,8 +440,12 @@ as that would be equivalent to a magnetic monopole, which have never
 been found experimentally, and is unlikely to be found using a simple
 solenoid magnet.\cite{acharya_search_2022}
 
-Now, all the potential solutions can be combined into one double
-series. By also converting the Fourier series from real to complex
+Now, all the potential solutions to $\Psi(r,\varphi,z) = Z(z)R(r)\Phi(\varphi)$ 
+can be combined into one double
+series. Since this solution is a combination of one series of 
+Bessel functions and two Fourier series', a fitting name
+is the Bessel-Fourier-Fourier series.
+By converting the two Fourier' series from real to complex
 valued double sided series, we can combine the
 $\mathfrak{A, B, D, E \text{ and } F}$
 coefficients into one complex valued coefficient $\Cnk$. The values
@@ -450,7 +454,7 @@ calculated. For known coefficients, instead $C_{n,k}$ will be used.
 The permittivity constant $\mu_0$ will hereafter be baked into the
 coefficients.
 
-After a lot of algebra, this yields
+After a lot of algebra, this yields the solution
 \begin{equation} \label{eq:Psi}
     \begin{split}
         \Psi(r,\varphi,z) &=\Cnk[0,0]z + \Bffok +\\
@@ -459,9 +463,26 @@ After a lot of algebra, this yields
 \end{equation}
 
 Technically, the first, second and fourth summands
-can be merged into one sum, they are however separated
+can be merged into one summand, they are however separated
 to make the distinction of the fundamental fourier series
 in z and the higher order harmonics clearer.
+The individual summands are hereafter given names for reference
+and can be seen in table \ref{tab:BFF-components}.
+Using the notation $\Psi_{n,k}$
+for the different harmonics, we have
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{l c p{2cm}}
+        $\Psi_{n,k}$ & Summand         & Name                       \\ \hline
+        1. $\Psi_{0,0}$ & $\Cnk[0,0]z$ & Dipole in $z$              \\
+        2. $\Psi_{0,k}$ & $\Bffok$     & Solenoid Fundamentals      \\
+        3. $\Psi_{n,0}$ & $\Bffno$     & Multipoles in $r, \varphi$ \\
+        4. $\Psi_{n,k}$ & $\Bffnk$     & Solenoid Harmonics
+    \end{tabular}
+    \caption{Components of the Bessel-Fourier-Fourier Series.}
+    \label{tab:BFF-components}
+\end{table}
 
 It is worth noting that the third summand in the above series
 are a commonly used form of two dimensional multipoles at CERN.
@@ -502,22 +523,7 @@ and finally, in $\varphi$
 \end{equation}
 
 We will now study the individual harmonics in $n$ of the
-BFF series. First, it might be beneficial to give them
-names for reference. Using the notation $\Psi_{n,k}$
-for the harmonics, we have
-
-\begin{table}[!h]
-    \centering
-    \begin{tabular}{l c p{2cm}}
-        $\Psi_{n,k}$ & Summand         & Name                       \\ \hline
-        1. $\Psi_{0,0}$ & $\Cnk[0,0]z$ & Dipole in $z$              \\
-        2. $\Psi_{0,k}$ & $\Bffok$     & Solenoid Fundamentals      \\
-        3. $\Psi_{n,0}$ & $\Bffno$     & Multipoles in $r, \varphi$ \\
-        4. $\Psi_{n,k}$ & $\Bffnk$     & Solenoid Harmonics
-    \end{tabular}
-    \caption{Components of the Bessel-Fourier-Fourier Series.}
-    \label{tab:BFF-components}
-\end{table}
+BFF series.
 
 Using numerical calculations from a simple current loop
 Biot-Savart model, the BFF series was fitted to $\vb{B}$
@@ -573,7 +579,7 @@ component, as illustrated in figure \ref{fig:solfundipplot}.
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/solfundipplot.png}
-    \caption{$Bz$ field along the z axis.}
+    \caption{$B_z$ field along the z axis.}
     \label{fig:solfundipplot}
 \end{figure}
 

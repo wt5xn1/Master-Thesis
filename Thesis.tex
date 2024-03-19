@@ -101,18 +101,32 @@
 	\begin{abstract}
 		At the European Institute for Nuclear Research, CERN, a new electron
 		cooler is being commissioned for the Antiproton Decelerator experiment.
+		In this experiment protons are shot into a block of metal, which creates
+		anti protons. These anti protons will thereafter be focused into 
+		a particle beam, a process done in several steps. One of these steps
+		is with an electron cooler.
 		This cooler shoots electrons into the ion-beam path. These electrons then
 		collide with the beam particles, and momentum is transferred from the 
 		beam particles to the electrons. The electrons are then steered away
 		from the beam path, into an electron collector.
 
-		In the beam path drift of the cooler, a solenoid magnet is used to
+		In the beam path drift of the cooler, where the anti protons and 
+		electrons meet, a normal conducting solenoid magnet is used to
 		orient the electron path. This magnet comes with strict requirements on
-		field quality, in the order of $\vec{B}_\perp / \vec{B}_\parallel < 1\mathrm{E}{-10}$.
-		A new measurement system for solenoids has been proposed, using coils printed 
-		on a printed circuit board (PCB). This PCB is then translated through the solenoid aperture, to obtain
-		maps of the magnetic field. In this thesis, the metrological characterization of
-		this system is presented, along with some post processing methods.
+		field quality, in the order of $\vec{B}_\perp / \vec{B}_\parallel < 10$ppm.
+
+		In this thesis a metrological characterization of a prototype measurement
+		system for solenoidal magnets is presented. Instead of winding measurement
+		coils with wire, they are instead printed on a circuit board over ten 
+		layers. Of particular interest was the magnet alignment with respect to
+		the beam aperture, so that the magnetic solenoid axis is in line
+		with the aperture central axis. For this purpose, a mathematical model
+		for solenoidal magnetic fields has been constructed. This model can be
+		used to quantify the sensitivity of the measurement system for an
+		unaligned magnet. Furthermore, some test measurements are presented, 
+		along with some simulation campaigns to further characterize the problem.
+		A specific method where the magnetic field peaks are used to measure 
+		the alignment is evaluated.
 	\end{abstract}
 }
 
@@ -141,7 +155,8 @@ Elektronerna leds sedan bort ur strålens väg, in i en elektronsamlare.
 I strålaperturen, där elektronerna och antiprotonerna möts, används
 en normalledande solenoidmagnet för att styra elektronerna. Denna
 solenoidmagnet kommer med strikta krav på den magnetiska fältprofilen,
-varför känslig mätutrustning krävs.
+varför känslig mätutrustning krävs. Det magnetiska fältet måste
+vara av solenoid karaktär, så att $\vec{B}_\perp / \vec{B}_\parallel < 10$ppm.
 
 I denna rapport presenteras en metrologisk karaktärisering av en
 ny prototyp på mätsystem för solenoidmagneter. Istället för att linda spolar som en mäter

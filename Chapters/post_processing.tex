@@ -1,6 +1,6 @@
-\chapter{Post Processing}
-To estimate the magnetic field in Tesla from the flux measurements
-(in Webers), the signals must be deconvoluted. The most simple
+\chapter{Results and Discussion}
+To estimate the magnetic field in tesla from the flux measurements
+(in webers), the signals must be deconvoluted. The most simple
 such deconvolution is simply dividing the flux $\Phi$ by the total surface
 area of the coil $A_{coil}$, as in equation \ref{eq:Phi-Area}
 \begin{equation}
@@ -110,7 +110,7 @@ as in equation \ref{eq:trackmodulus}.
     \label{eq:trackmodulus}
 \end{equation}
 
-Two points on each layer has zero neighbors (exluding the diagonal in
+Two points on each layer has zero neighbors (excluding the diagonal in
 $N$). These are the start and end
 points on that layer, connected to a via or a soldering contact on the
 first and last layers. Every other point has one neighbor excluding
@@ -193,7 +193,7 @@ is then split into several whole turns using algorithm
     \end{algorithmic}
 \end{algorithm}
 
-Essentially, for every point in the coil polygon, a two vectors
+Essentially, for every point in the coil polygon, two vectors
 are drawn from the central point to the current and next point
 in $P$. The angle $\varphi$ between these vectors is calculated using their
 inner product. This is repeated until the cumulative angle is more
@@ -205,7 +205,8 @@ in figure \ref{fig:Q11-winding}.
     \centering
     \includegraphics[width=0.8\linewidth]{figs/Q11-roundwalk}
     \caption{Q11 coil winding, with the central point, some
-        partial angles, and the estimated whole turns in red.
+        partial angles, and the estimated start/end points of
+        the turns in red.
         Note that curved segments are discretized into smaller
         straight segments.}
     \label{fig:Q11-winding}

@@ -9,7 +9,7 @@ between the $B_z$ field peaks and the yaw angle was investigated in
 a simulation campaign. The coil dimensions presented in figure
 \ref{fig:sim-mag-dims} were varied in a parametric sweep.
 For each sweep, the $z$ value at the field maximum along the lines $l_1$ and $l_2$
-was calculated as a function of the yaw angle \emph{Rot}. Each
+was calculated as a function of the yaw angle $\theta$. Each
 of the lines were tangential to the $z$ axis with some offset
 $y_{off}$ in $y$ as presented in figure \ref{fig:sim-mag-rot}.
 
@@ -89,7 +89,7 @@ expects, regardless of solenoid configuration.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{figs/sim-fieldmap}
-    \caption{$\vb{B}$ and $B_z$ argmax over $y$, for a simple current
+    \caption{argmax of $\vb{B}$ and $B_z$  over $z$, for a simple current
         loop and coil made up of 600 turns.}
     \label{fig:sim-mag-fieldmap-argmax}
 \end{figure}
@@ -102,7 +102,7 @@ series expansions was
 
 
 \begin{equation}
-    \int \limits_{t_0}^{t_1} \vb{B}(\vb{l}(t))dt = C_{0,0}L \approx \mu_0 NI
+    \int \limits_{t_0}^{t_1} \vb{B}(\vb{l}(t))d\vb{l} = C_{0,0}L \approx \mu_0 NI
     \label{eq:Bzlineint}
 \end{equation}
 
@@ -116,9 +116,9 @@ transversal integral fields, as in equations \ref{eq:Bx-Integral} and
 \ref{eq:By-Integral}.
 
 \begin{align}
-    I_{\vb{l}}(B_x) & := \int \limits_{\vb{l}} B_x d\vb{l}
+    I(B_x) & := \int \limits_{t_0}^{t_1} B_x(\vb{l}(t))d\vb{l}
     \label{eq:Bx-Integral}                                 \\
-    I_{\vb{l}}(B_y) & := \int \limits_{\vb{l}} B_y d\vb{l}
+    I(B_y) & := \int \limits_{t_0}^{t_1} B_y(\vb{l}(t))d\vb{l}
     \label{eq:By-Integral}
 \end{align}
 
@@ -141,19 +141,19 @@ for $l$ to pass through the solenoid aperture.
 Regardless of all of the variations between simulation passes, the results were
 consistent down to a millionth of a radian.
 Furthermore, the value of the $By$ integral along $\vb{l}$
-was invariant to the $x,y$ location of $\vb{l_1}$ inside the solenoid.
+was invariant to the $x,y$ location of $\vb{l}$ inside the solenoid.
 The simulations suggest that when a solenoid is tilted with an angle $\theta$
 around the x axis, the integral of $B_y$ along $\vb{l}$ becomes
 
 \begin{equation}
-    \int\limits_{\vb{l}}B_y d\vb{l} =
-    \tan\left( \frac{\theta}{2} \right)  \int\limits_{\vb{l}}\vb{B} d\vb{l}
+    \int \limits_{t_0}^{t_1} B_y(\vb{l}(t))d\vb{l} =
+    \tan\left( \frac{\theta}{2} \right)  \int\limits_{\vb{l}}\cdot\vb{B} d\vb{l}
     \approx \mu_0\tan\left( \frac{\theta}{2} \right) NI
     \label{eq:tanhalf}
 \end{equation}
 or alternatively
 \begin{equation}
-    \frac{I_{\vb{l}}(B_y)}{\mu_0NI} \approx \arctan(\frac{\theta}{2})
+    \frac{I(B_y)}{\mu_0NI} \approx \arctan(\frac{\theta}{2})
     \label{eq:Byint-Error}
 \end{equation}
 
@@ -235,8 +235,11 @@ dipole components in $r, \varphi$ for the BFF series
 
 \begin{align}
     |C_{1,0} + C_{-1,0}|     & \approx \mu_0
-    \tan\left( \frac{\theta}{2} \right) \frac{NI}{L}    \\
+    \tan\left( \frac{\theta}{2} \right) \frac{NI}{L}    
+    \label{eq:C10-est}
+    \\
     \arg(C_{1,0} + C_{-1,0}) & = \alpha + \frac{\pi}{2}
+    \label{eq:C10-alpha}
 \end{align}
 where $\alpha$ is the angular offset from the $x$ axis to the rotation
 axis of the solenoid.
