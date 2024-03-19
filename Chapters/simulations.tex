@@ -5,11 +5,11 @@
 
 To further understand why the model presented in equation
 \ref{eq:angle_estimation} did not perform as hoped, the relationship
-between the $B_z$ field peaks and the yaw angle was investigated in
+between the $B_z$ field peaks and the pitch angle was investigated in
 a simulation campaign. The coil dimensions presented in figure
 \ref{fig:sim-mag-dims} were varied in a parametric sweep.
 For each sweep, the $z$ value at the field maximum along the lines $l_1$ and $l_2$
-was calculated as a function of the yaw angle $\theta$. Each
+was calculated as a function of the pitch angle $\theta$. Each
 of the lines were tangential to the $z$ axis with some offset
 $y_{off}$ in $y$ as presented in figure \ref{fig:sim-mag-rot}.
 
@@ -45,7 +45,7 @@ and $l_2$ go through the numerical singularities inside the magnet.
             Magnet Width/Thickness & \emph{W}       & $0.0-0.4$ m   & 6               \\
             Magnet Length          & \emph{L}       & $0.0-0.5$ m   & 9               \\
             Line $y$ offset        & $y_{off}$      & $0.05-0.2$ m  & 11              \\
-            Magnet yaw angle       & $\theta$       & $0.0-0.5$ rad & 31
+            Magnet pitch angle       & $\theta$       & $0.0-0.5$ rad & 31
         \end{tabular}
         \caption{Simulation parameter values}
         \label{tab:parameter-vals}
@@ -61,13 +61,13 @@ Figure \ref{fig:sim-mag-dimensions} gives an idea of the general impact that the
 magnet dimensions have on the peak shifts. For each plot, the other magnet dimensions
 are constant. A key takeaway is that most magnet dimensions do not affect
 the peak shift that much at the chosen parameter values, especially at
-lower yaw angles. The offset from the axis however has a great effect.
+lower pitch angles. The offset from the axis however has a great effect.
 
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figs/sim_params_plot}
-    \caption{Peak shifts and how they vary with yaw angle and magnet dimensions.}
+    \caption{Peak shifts and how they vary with pitch angle and magnet dimensions.}
     \label{fig:sim-mag-dimensions}
 \end{figure}
 
@@ -102,11 +102,11 @@ series expansions was
 
 
 \begin{equation}
-    \int \limits_{t_0}^{t_1} \vb{B}(\vb{l}(t))d\vb{l} = C_{0,0}L \approx \mu_0 NI
+    \int \limits_{t_0}^{t_1} \vb{B}(\vb{l}(t))dt = C_{0,0}L \approx \mu_0 NI
     \label{eq:Bzlineint}
 \end{equation}
 
-for a line integral going through a solenoid, regardless of the yaw
+for a line integral going through a solenoid, regardless of the pitch
 angle $\theta$. $\vb{l}$ is a curve whose image
 is a line with length L and whose ends are far from the magnet, where
 the magnetic field strength is negligible.
@@ -116,9 +116,9 @@ transversal integral fields, as in equations \ref{eq:Bx-Integral} and
 \ref{eq:By-Integral}.
 
 \begin{align}
-    I(B_x) & := \int \limits_{t_0}^{t_1} B_x(\vb{l}(t))d\vb{l}
+    I(B_x) & := \int \limits_{t_0}^{t_1} B_x(\vb{l}(t))dt
     \label{eq:Bx-Integral}                                 \\
-    I(B_y) & := \int \limits_{t_0}^{t_1} B_y(\vb{l}(t))d\vb{l}
+    I(B_y) & := \int \limits_{t_0}^{t_1} B_y(\vb{l}(t))dt
     \label{eq:By-Integral}
 \end{align}
 
@@ -132,7 +132,7 @@ solenoid.
 This relationship can not easily
 be found algebraically, and was instead investigated using the same
 simulation setup previously described in this chapter. The numerical integral of
-both $B_z$ and $B_y$ were taken along $\vb{l}$ over different yaw angles $\theta$.
+both $B_z$ and $B_y$ were taken along $\vb{l}$ over different pitch angles $\theta$.
 Like before, the solenoids
 radius, length and width were varied, as well as the $x$ and $y$ offset.
 The $x, y$ offsets were small enough
@@ -146,8 +146,9 @@ The simulations suggest that when a solenoid is tilted with an angle $\theta$
 around the x axis, the integral of $B_y$ along $\vb{l}$ becomes
 
 \begin{equation}
-    \int \limits_{t_0}^{t_1} B_y(\vb{l}(t))d\vb{l} =
-    \tan\left( \frac{\theta}{2} \right)  \int\limits_{\vb{l}}\cdot\vb{B} d\vb{l}
+    \int \limits_{t_0}^{t_1} B_y(\vb{l}(t))dt =
+    \tan\left( \frac{\theta}{2} \right) 
+    \int\limits_{t_0}^{t_1} \vb{B}(\vb{l}(t)) dt
     \approx \mu_0\tan\left( \frac{\theta}{2} \right) NI
     \label{eq:tanhalf}
 \end{equation}
