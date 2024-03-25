@@ -36,7 +36,12 @@ a consistent model is a challenge. Some hope remains however. In figure
 \ref{fig:sim-mag-fieldmap-argmax} one can see that the argmax is more affine
 for densely wound solenoids with a homogenous field profile inside the aperture.
 Through extensive data collection using even more simulations it might be
-possible to make a working linear model.
+possible to make a working linear model. Moreover, since the error is 
+decreasing with the pitch/yaw angle, this model is still viable 
+for use in alignment. Since the alignment process is done iteratively,
+measuring and then aligning as needed, the error will decrease with 
+each iteration, trending towards zero as smaller and smaller alignments
+are needed.
 
 Another possibility is to add coils or Hall effect sensors that measure
 the transversal $B_x$ and $B_y$ components. If the results of section 
@@ -52,8 +57,8 @@ yaw-pitch angle could then be estimated using
 
 \begin{align}
     I_{Bz} = \int B_z dz, \; 
-    I_{Bx} &= \int B_y dy, \; 
-    I_{By} = \int B_x dx \\
+    I_{Bx} &= \int B_y dz, \; 
+    I_{By} = \int B_x dz \\
     \theta_x &\approx 2\arctan(\frac{I_{By}}{I_{Bz}})\\
     \theta_y &\approx 2\arctan(\frac{I_{Bx}}{I_{Bz}})
 \end{align}

@@ -72,6 +72,11 @@
 \usepackage{caption}
 \usepackage{subcaption, wrapfig, graphicx}
 \usepackage[section]{placeins}
+\usepackage{pdfpages}
+
+% \usepackage{draftwatermark}
+% \SetWatermarkText{Draft}
+% \SetWatermarkScale{2}
 
 % Maths
 \usepackage{amsmath,physics, esint, amssymb}
@@ -135,9 +140,22 @@
 % Creates the front matter (title page(s), abstract, list of papers)
 % for either a Comprehensive Summary or a Monograph.
 % Authors of Comprehensive Summaries use this front matter 
-\frontmatterCS
+% \frontmatterCS
 % Monograph authors use this front matter 
 %\frontmatterMonograph 
+
+\newlength{\originalVOffset}
+\newlength{\originalHOffset}
+\setlength{\originalVOffset}{\voffset}   
+\setlength{\originalHOffset}{\hoffset}
+
+\setlength{\voffset}{0cm}
+\setlength{\hoffset}{0cm}
+\includepdf[pages=1,offset=0 -10mm]{Build/frontpage.pdf}
+\includepdf[pages=2]{Build/frontpage.pdf}
+\setlength{\voffset}{\originalVOffset}
+\setlength{\hoffset}{\originalHOffset}
+
 \newpage
 \section*{Sammanfattning på Svenska}
 På den Europeiska organisationen för Kärnforskning pågår just
@@ -172,7 +190,7 @@ magnetens justering utvärderas.
 
 
 % Optional dedication
-\dedication{Thanks to everyone at the TE-MSC-MM department for their warm and
+\dedication{Thanks to everyone at the TE-MSC-TM department for their warm and
 inviting culture, and sharing all
 their knowledge on magnetics. Thanks especially to my supervisors Carlo Petrone
 and Mariano Pentella, who taught me everything you could want to know about
